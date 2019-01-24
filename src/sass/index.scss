@@ -1265,7 +1265,8 @@ a:hover {
             margin-right: 10px;
             margin-top: 10px;
             list-style: none;
-            img{
+
+            img {
                 width: 290px;
                 height: 160px;
                 float: left;
@@ -1274,6 +1275,279 @@ a:hover {
                 outline: none;
                 vertical-align: middle;
             }
+        }
+    }
+}
+
+/*门店楼层*/
+.index_shop {
+    width: 1190px;
+    height: 364px;
+    margin: 0 auto 30px;
+    position: relative;
+
+    ol {
+        &.tab {
+            width: 1190px;
+            height: 28px;
+            color: #FFF;
+            border-bottom: 3px solid #94c51b;
+            float: left;
+            background-color: #e9e9e9;
+
+            li {
+                width: 100px;
+                height: 27px;
+                line-height: 27px;
+                text-align: center;
+                margin: 1px 0px 0px 1px;
+                background: #ffffff;
+                color: #666666;
+                font-size: 14px;
+                font-weight: bold;
+                float: left;
+                cursor: default;
+            }
+
+            .on {
+                background: #94c51b;
+                color: #fff;
+                height: 28px;
+                margin: 0px;
+            }
+
+            .shop_li_div {
+                width: 785px;
+                height: 27px;
+                background-color: #fff;
+                position: absolute;
+                top: 1px;
+                right: 1px;
+            }
+        }
+    }
+
+    .left {
+        width: 169px;
+        height: 273px;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+
+        li {
+            height: 137px;
+            cursor: default;
+            background: url(../css/images/left_bg_all.png);
+
+            &.info {
+                background-position: 0px top;
+
+            }
+
+            &.map {
+                background-position: 0px -136px;
+            }
+        }
+    }
+
+    .right {
+        width: 1020px;
+        height: 272px;
+        position: absolute;
+        right: 0px;
+        top: 91px;
+        border: 1px solid #e9e9e9;
+        border-width: 1px 1px 1px 0px;
+
+        .changeBox_a1,
+        .storeMap {
+            width: 723px;
+            height: 272px;
+            overflow: hidden;
+
+            .changeBox_overflow {
+                width: 703px;
+                height: 250px;
+                margin: 10px 0px 0px 10px;
+                overflow: hidden;
+                position: relative;
+            }
+        }
+
+        .changeBox_a1 {
+            ul {
+                height: 250px;
+                position: absolute;
+                overflow: hidden;
+            }
+
+            img {
+                float: left;
+                width: 703px;
+                height: 251px;
+            }
+        }
+
+        .infoBox {
+            width: 297px;
+            height: 272px;
+            border-left: 1px solid #e9e9e9;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+
+            .infoUl {
+                width: 240px;
+                margin: 25px 20px 0 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .serviceUl {
+                width: 240px;
+                margin: 0 20px 25px 20px;
+                padding-top: 10px;
+                border-top: 1px solid #fff;
+            }
+
+            li {
+                display: block;
+                padding: 0 0 0 30px;
+                margin: 5px 0;
+                line-height: 18px;
+                color: #666666;
+                background: url(./images/serviceIcon.png) no-repeat;
+
+                &.serviceTime {
+                    background-position: -2px -229px;
+                }
+
+                &.storeAdd {
+                    background-position: -2px -257px;
+                }
+
+                &.storeTel {
+                    background-position: -2px -313px;
+                }
+
+                &.trafficGuide {
+                    background-position: -2px -369px;
+                }
+
+                &.flagshipStore {
+                    background-position: -28px -5px;
+                }
+
+                &.o2oStore {
+                    background-position: -28px -33px;
+                }
+
+                &.optometry {
+                    background-position: -28px -61px;
+                }
+
+                &.correct {
+                    background-position: -28px -89px;
+                }
+
+                &.customization {
+                    background-position: -28px -117px;
+                }
+
+                &.onlineArea {
+                    background-position: -28px -145px;
+                }
+
+                &.StoreEvent {
+                    background-position: -28px -173px;
+                }
+
+                &.metroStation {
+                    background-position: -28px -201px;
+                }
+            }
+        }
+    }
+
+    ul {
+        &.tit {
+            height: 60px;
+            background: #FFF;
+
+            li {
+                width: 1188px;
+                height: 60px;
+                float: left;
+                display: none;
+                border-style: solid;
+                border-color: #e9e9e9;
+                border-width: 0px 1px;
+
+                .shopinfo {
+                    width: 680px;
+                    float: left;
+                    color: #666666;
+                    line-height: 20px;
+                    text-indent: 2em;
+                    margin: 10px 0 0 14px;
+                }
+            }
+        }
+    }
+
+}
+
+.shopService {
+    width: 278px;
+    height: 30px;
+    border-left: 1px solid #f1f1f1;
+    float: right;
+    margin: 15px 0px;
+    padding-left: 16px;
+    position: relative;
+
+    a {
+        display: block;
+        width: 24px;
+        height: 24px;
+        float: left;
+        margin: 3px 5px 3px 0px;
+        cursor: default;
+        border-radius: 12px;
+        -moz-border-radius: 12px;
+        -webkit-border-radius: 12px;
+        background: #94c51b url(./images/serviceIcon.png) no-repeat;
+
+        &.flagshipStore {
+            background-position: -2px -2px;
+        }
+
+        &.o2oStore {
+            background-position: -2px -30px;
+        }
+
+        &.optometry {
+            background-position: -2px -58px;
+        }
+
+        &.correct {
+            background-position: -2px -86px;
+        }
+
+        &.customization {
+            background-position: -2px -114px;
+        }
+
+        &.onlineArea {
+            background-position: -2px -142px;
+        }
+
+        &.StoreEvent {
+            background-position: -2px -170px;
+        }
+
+        &.metroStation {
+            background-position: -2px -198px;
         }
     }
 }

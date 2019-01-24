@@ -1255,3 +1255,269 @@ a:hover {
   outline: none;
   vertical-align: middle;
 }
+
+/*门店楼层*/
+.index_shop {
+  width: 1190px;
+  height: 364px;
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+.index_shop ol.tab {
+  width: 1190px;
+  height: 28px;
+  color: #FFF;
+  border-bottom: 3px solid #94c51b;
+  float: left;
+  background-color: #e9e9e9;
+}
+
+.index_shop ol.tab li {
+  width: 100px;
+  height: 27px;
+  line-height: 27px;
+  text-align: center;
+  margin: 1px 0px 0px 1px;
+  background: #ffffff;
+  color: #666666;
+  font-size: 14px;
+  font-weight: bold;
+  float: left;
+  cursor: default;
+}
+
+.index_shop ol.tab .on {
+  background: #94c51b;
+  color: #fff;
+  height: 28px;
+  margin: 0px;
+}
+
+.index_shop ol.tab .shop_li_div {
+  width: 785px;
+  height: 27px;
+  background-color: #fff;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+}
+
+.index_shop .left {
+  width: 169px;
+  height: 273px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+.index_shop .left li {
+  height: 137px;
+  cursor: default;
+  background: url(../css/images/left_bg_all.png);
+}
+
+.index_shop .left li.info {
+  background-position: 0px top;
+}
+
+.index_shop .left li.map {
+  background-position: 0px -136px;
+}
+
+.index_shop .right {
+  width: 1020px;
+  height: 272px;
+  position: absolute;
+  right: 0px;
+  top: 91px;
+  border: 1px solid #e9e9e9;
+  border-width: 1px 1px 1px 0px;
+}
+
+.index_shop .right .changeBox_a1,
+.index_shop .right .storeMap {
+  width: 723px;
+  height: 272px;
+  overflow: hidden;
+}
+
+.index_shop .right .changeBox_a1 .changeBox_overflow,
+.index_shop .right .storeMap .changeBox_overflow {
+  width: 703px;
+  height: 250px;
+  margin: 10px 0px 0px 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.index_shop .right .changeBox_a1 ul {
+  height: 250px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.index_shop .right .changeBox_a1 img {
+  float: left;
+  width: 703px;
+  height: 251px;
+}
+
+.index_shop .right .infoBox {
+  width: 297px;
+  height: 272px;
+  border-left: 1px solid #e9e9e9;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.index_shop .right .infoBox .infoUl {
+  width: 240px;
+  margin: 25px 20px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.index_shop .right .infoBox .serviceUl {
+  width: 240px;
+  margin: 0 20px 25px 20px;
+  padding-top: 10px;
+  border-top: 1px solid #fff;
+}
+
+.index_shop .right .infoBox li {
+  display: block;
+  padding: 0 0 0 30px;
+  margin: 5px 0;
+  line-height: 18px;
+  color: #666666;
+  background: url(./images/serviceIcon.png) no-repeat;
+}
+
+.index_shop .right .infoBox li.serviceTime {
+  background-position: -2px -229px;
+}
+
+.index_shop .right .infoBox li.storeAdd {
+  background-position: -2px -257px;
+}
+
+.index_shop .right .infoBox li.storeTel {
+  background-position: -2px -313px;
+}
+
+.index_shop .right .infoBox li.trafficGuide {
+  background-position: -2px -369px;
+}
+
+.index_shop .right .infoBox li.flagshipStore {
+  background-position: -28px -5px;
+}
+
+.index_shop .right .infoBox li.o2oStore {
+  background-position: -28px -33px;
+}
+
+.index_shop .right .infoBox li.optometry {
+  background-position: -28px -61px;
+}
+
+.index_shop .right .infoBox li.correct {
+  background-position: -28px -89px;
+}
+
+.index_shop .right .infoBox li.customization {
+  background-position: -28px -117px;
+}
+
+.index_shop .right .infoBox li.onlineArea {
+  background-position: -28px -145px;
+}
+
+.index_shop .right .infoBox li.StoreEvent {
+  background-position: -28px -173px;
+}
+
+.index_shop .right .infoBox li.metroStation {
+  background-position: -28px -201px;
+}
+
+.index_shop ul.tit {
+  height: 60px;
+  background: #FFF;
+}
+
+.index_shop ul.tit li {
+  width: 1188px;
+  height: 60px;
+  float: left;
+  display: none;
+  border-style: solid;
+  border-color: #e9e9e9;
+  border-width: 0px 1px;
+}
+
+.index_shop ul.tit li .shopinfo {
+  width: 680px;
+  float: left;
+  color: #666666;
+  line-height: 20px;
+  text-indent: 2em;
+  margin: 10px 0 0 14px;
+}
+
+.shopService {
+  width: 278px;
+  height: 30px;
+  border-left: 1px solid #f1f1f1;
+  float: right;
+  margin: 15px 0px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.shopService a {
+  display: block;
+  width: 24px;
+  height: 24px;
+  float: left;
+  margin: 3px 5px 3px 0px;
+  cursor: default;
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  background: #94c51b url(./images/serviceIcon.png) no-repeat;
+}
+
+.shopService a.flagshipStore {
+  background-position: -2px -2px;
+}
+
+.shopService a.o2oStore {
+  background-position: -2px -30px;
+}
+
+.shopService a.optometry {
+  background-position: -2px -58px;
+}
+
+.shopService a.correct {
+  background-position: -2px -86px;
+}
+
+.shopService a.customization {
+  background-position: -2px -114px;
+}
+
+.shopService a.onlineArea {
+  background-position: -2px -142px;
+}
+
+.shopService a.StoreEvent {
+  background-position: -2px -170px;
+}
+
+.shopService a.metroStation {
+  background-position: -2px -198px;
+}
