@@ -1,4 +1,8 @@
 /*公共样式*/
+body {
+    font-size: 12px;
+}
+
 .clear {
     clear: both;
     width: 0;
@@ -811,10 +815,11 @@ a:hover {
     width: 979px;
     height: 182px;
     float: left;
+
     .hp_menu {
         width: 979px;
         height: 182px;
-       
+
         .hp_mj {
             float: left;
             width: 195px;
@@ -828,7 +833,8 @@ a:hover {
                 transition: all 0.2s linear;
                 -webkit-transition: all 0.2s linear;
             }
-            p{
+
+            p {
                 width: 100%;
                 position: relative;
                 line-height: 20px;
@@ -836,11 +842,184 @@ a:hover {
                 font-size: 12px;
                 text-align: center;
                 margin-top: 3px;
-                span{
+
+                span {
                     font-size: 14px;
                     color: #ff6600;
                 }
             }
         }
+    }
+}
+
+/*1F楼层部分*/
+.wide_f_main {
+    width: 1190px;
+    margin: 0 auto 40px;
+    position: relative;
+
+    .wide_f_tit {
+        height: 27px;
+        line-height: 27px;
+        overflow: hidden;
+
+        .wide_delicacy {
+            color: #666666;
+            overflow: hidden;
+
+            span {
+                color: #cccccc;
+            }
+
+            a {
+                color: #666666;
+                padding: 0px 4px 0px 4px;
+            }
+        }
+
+        .wide_more {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+
+            a {
+                width: 40px;
+                height: 27px;
+                line-height: 27px;
+                position: relative;
+                color: #666666;
+                display: block;
+            }
+
+            i {
+                width: 13px;
+                height: 13px;
+                background-position: 0px -727px;
+                display: inline-block;
+                position: absolute;
+                top: 7px;
+                right: 0px;
+            }
+        }
+    }
+
+    .wide_title {
+        width: 210px;
+        font-size: 19px;
+        line-height: 22px;
+
+        span {
+            margin-right: 12px;
+        }
+    }
+
+    .wide_f_tit4 {
+        border-bottom: 3px solid #aa72d2;
+
+        .wide_title {
+            color: #aa72d2;
+            font-weight: normal;
+
+            span {
+                margin-right: 12px;
+            }
+        }
+    }
+
+    .wide_4f_up {
+        height: 243px;
+        width: 1190px;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        position: relative;
+
+        .wide_4f_ban {
+            width: 710px;
+            height: 243px;
+            overflow: hidden;
+            margin-right: 6px;
+        }
+
+        .wide_5f_img {
+            width: 480px;
+            height: 243px;
+            overflow: hidden;
+            position: absolute;
+            right: 0px;
+
+            img {
+                width: 474px;
+                height: 243px;
+                position: absolute;
+                right: 0px;
+            }
+        }
+    }
+
+    .wide_4f_cont {
+        width: 1190px;
+        background-color: #e9e9e9;
+
+        li {
+            width: 288px;
+            height: 241px;
+            margin: 1px 0px 0px 1px;
+            padding: 4px;
+            background-color: #fff;
+            float: left;
+            position: relative;
+        }
+
+        .wide_4f_li_img {
+            transition: all 0.2s linear;
+            -webkit-transition: all 0.2s linear;
+
+            &:hover {
+                margin-left: -4px;
+            }
+        }
+
+        .wide_4f_li_sales,
+        .wide_4f_li_name,
+        .wide_4f_li_price {
+            position: absolute;
+            left: 4px;
+            text-align: center;
+            width: 288px;
+        }
+
+        .wide_4f_li_sales {
+            top: 225px;
+            color: #ff6600;
+        }
+
+        .wide_4f_li_name {
+            color: #666666;
+            top: 210px;
+        }
+
+        .wide_4f_li_price {
+            color: #ff6600;
+            font-size: 16px;
+            top: 190px;
+        }
+    }
+}
+
+.infcp_4f_ban {
+    width: 710px;
+    height: 243px;
+    overflow: hidden;
+}
+
+.wide_infcp {
+    position: relative;
+
+    .infcptop {
+        width: 10000px;
+    }
+
+    ul {
+        position: absolute;
     }
 }
