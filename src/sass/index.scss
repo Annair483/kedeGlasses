@@ -1187,9 +1187,10 @@ a:hover {
                 top: 194px;
                 left: 10px;
             }
-            .wide_f_item_sales{
+
+            .wide_f_item_sales {
                 color: #FF6600;
-                top:210px;
+                top: 210px;
             }
         }
     }
@@ -1237,6 +1238,42 @@ a:hover {
 
         &.level_10 {
             background-position: -367px -55px;
+        }
+    }
+}
+
+/*楼层广告*/
+.hj_top {
+    position: relative;
+    width: 1190px;
+    height: 360px;
+    margin: 0 auto 40px;
+    margin-top: -30px;
+    background: #fff;
+
+    ul {
+        width: 1200px;
+        height: 340px;
+        margin: 0 auto;
+        display: block;
+        padding: 0px;
+
+        li {
+            width: 290px;
+            height: 160px;
+            float: left;
+            margin-right: 10px;
+            margin-top: 10px;
+            list-style: none;
+            img{
+                width: 290px;
+                height: 160px;
+                float: left;
+                list-style: none;
+                border: none;
+                outline: none;
+                vertical-align: middle;
+            }
         }
     }
 }
