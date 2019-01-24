@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
+    <script src="lib/jquery-3.2.1.js"></script>
 </head>
 
 <body>
@@ -16,6 +17,9 @@
         <div class="content info content">
             <div class="fav fl"><a rel="sidebar" id="favSideBar" href="#">收藏可得网</a></div>
             <div class="fl" id="userTooleBarMemberStatus">
+                <div class="float-left" id="userTooleBarMemberStatus">
+                    您好，欢迎光临可得眼镜网！<a class="to-login" href="#" target="_self">登录</a><a href="#"
+                        class="to-register" target="_self">[免费注册]</a></div>
                 <!-- js渲染文字 -->
             </div>
             <div class="menu fr">
@@ -39,7 +43,6 @@
                         <li><a href="#" target="_blank">网站地图</a></li>
                     </ul>
                 </span>
-                <!-- <span id="headerTopMenu"></span> -->
                 <span>|</span>
                 <span class="menu_tab menu_tab_gwc">
                     <a rel="nofollow" href="#">购物车<span id="menu_tab_cart"></span>件</a>
@@ -1787,7 +1790,8 @@
                 <p>
                     Copyright 2006-2018 可得眼镜 KEDE.com 版权所有
                     <a href="#" rel="nofollow" target="_blank">沪ICP备14001373号</a>
-                    <a href="#" rel="nofollow" target="_blank"><img src="./css/images/ba.png" alt="">沪公网安备 31010702003385号</a> 全国服务热线：4006-20-20-20
+                    <a href="#" rel="nofollow" target="_blank"><img src="./css/images/ba.png" alt="">沪公网安备
+                        31010702003385号</a> 全国服务热线：4006-20-20-20
                 </p>
             </div>
             <div class="FTA-04">
@@ -1799,6 +1803,55 @@
         </div>
     </div>
     <!-- 底部结束 -->
+    <!-- 左侧漂浮开始 -->
+    <div class="pf_left" style="display: block;">
+        <a class="pf_left_1" href="#wide_f_1"></a>
+        <a class="pf_left_2" href="#wide_f_2"></a>
+        <a class="pf_left_3" href="#wide_f_3"></a>
+        <a class="pf_left_4" href="#wide_f_4"></a>
+    </div>
+    <script>
+        let $pf_left = $('.pf_left');
+        $pf_left.on('click', 'a', function () {
+            $('html,body').animate({
+                scrollTop: ($($(this).attr('href')).offset().top - 50)
+            }, 1000);
+        })
+    </script>
+    <!-- 左侧漂浮结束 -->
+    <!-- 右侧漂浮开始 -->
+    <div class="pf_right">
+        <a href="javascript:;" class="pf_right_4"></a>
+        <a href="javascript:;" class="pf_right_2"></a>
+        <a href="javascript:;" class="pf_right_3"></a>
+        <a href="/cart" class="J-shoping pf_right_5"><label id="RightContactFloatContainerCartQuantity">0</label></a>
+        <a href="#top" class="pf_right_6" style="display: block;"></a>
+        <div class="pf_ygs" style="bottom: 150px; display: none;"></div>
+        <div class="pf_weixin" style="bottom: 240px; display: none;"></div>
+    </div>
+    <!-- 右侧漂浮结束 -->
+    <script>
+        let $pf_right_4 = $('.pf_right_4');
+        let $pf_right_3 = $('.pf_right_3');
+        let $pf_ygs = $('.pf_ygs');
+        let $pf_weixin = $('.pf_weixin');
+        $pf_right_4.hover(function () {
+            $pf_weixin.css('display', 'block');
+        }, function () {
+            $pf_weixin.css('display', 'none');
+        })
+        $pf_right_3.hover(function () {
+            $pf_ygs.css('display', 'block');
+        }, function () {
+            $pf_ygs.css('display', 'none');
+        })
+        let $pf_right_6 = $('.pf_right_6');
+        $pf_right_6.on('click', function () {
+            $('html,body').animate({
+                scrollTop: ($($(this).attr('href')).offset().top - 50)
+            }, 1000);
+        })
+    </script>
 </body>
 
 </html>

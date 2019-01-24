@@ -1839,6 +1839,7 @@ a:hover {
     float: left;
     cursor: pointer;
 }
+
 /*底部*/
 .wide-Footer {
     background: #F0F0F0;
@@ -1847,11 +1848,13 @@ a:hover {
     padding-top: 10px;
     clear: both;
     font-family: "宋体";
-    a{
+
+    a {
         &:hover {
             color: #FE6809;
         }
     }
+
     .FT-A {
         position: relative;
         width: 1190px;
@@ -1859,44 +1862,53 @@ a:hover {
         height: 390px;
         text-align: center;
     }
+
     .FTA-02 {
         display: inline-block;
         padding: 20px 0px 20px 70px;
         border-top: 1px #fff solid;
         border-bottom: 1px solid #E0E0E0;
+
         ul {
             display: block;
             float: left;
             width: 150px;
             color: #666;
         }
+
         h4 {
             font-size: 14px;
             margin-bottom: 10px;
             font-weight: bold;
         }
+
         li {
             line-height: 160%;
         }
     }
+
     .FTA-03 {
         border-top: 1px #fff solid;
         text-align: center;
         padding: 14px 0;
+
         a {
             margin-right: 5px;
         }
+
         p {
             text-align: center;
             padding-top: 5px;
         }
     }
+
     .FTA-04 {
         display: block;
         width: 697px;
         margin: 0px auto;
         height: 40px;
         background: url(./images/FTC_01_bg3.jpg);
+
         a {
             float: left;
             display: block;
@@ -1905,7 +1917,166 @@ a:hover {
         }
     }
 }
+
 .wide-Footer,
 .wide-Footer a {
     color: #999;
+}
+
+/*左侧漂浮*/
+.pf_left {
+    position: fixed;
+    display: none;
+    top: 20%;
+    left: 50%;
+    margin-left: -640px;
+    _position: absolute;
+
+    a {
+        width: 40px;
+        height: 40px;
+        background: url(./images/tubiao.png) no-repeat;
+        display: block;
+    }
+
+    .pf_left_1 {
+        background-position: -70px -414px;
+
+        &:hover {
+            background-position: -30px -414px;
+        }
+    }
+
+    .pf_left_2 {
+        background-position: -70px -454px;
+
+        &:hover {
+            background-position: -30px -454px;
+        }
+    }
+
+    .pf_left_3 {
+        background-position: -70px -494px;
+
+        &:hover {
+            background-position: -30px -494px;
+        }
+    }
+
+    .pf_left_4 {
+        background-position: -70px -534px;
+        height: 41px;
+
+        &:hover {
+            background-position: -30px -534px;
+        }
+    }
+}
+
+/*右侧漂浮*/
+.pf_right {
+    z-index: 100;
+    position: fixed;
+    width: 55px;
+    height: 305px;
+    bottom: 20px;
+    left: 50%;
+    margin-left: 600px;
+
+    a {
+        width: 55px;
+        height: 61px;
+        background: url(./images/tubiao.png) no-repeat;
+        display: block;
+        position: relative;
+    }
+
+    .pf_right_1 {
+        background-position: -309px -414px;
+
+        &:hover {
+            background-position: -364px -414px;
+        }
+    }
+
+    .pf_right_2 {
+        background-position: -309px -475px;
+
+        &:hover {
+            background-position: -364px -475px;
+        }
+    }
+
+    .pf_right_3 {
+        background-position: -309px -536px;
+
+        &:hover {
+            background-position: -364px -536px;
+        }
+    }
+
+    .pf_right_4 {
+        background-position: -309px -597px;
+        border-top: 1px solid #e8e8e8;
+
+        &:hover {
+            background-position: -364px -597px;
+        }
+    }
+
+    .pf_right_5 {
+        background-position: -309px -658px;
+
+        &:hover {
+            background-position: -364px -658px;
+        }
+        label {
+            min-width: 17px;
+            height: 17px;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            text-align: center;
+            line-height: 17px;
+            color: #fff;
+            display: none;
+            background-color: #ff6600;
+            -moz-border-radius: 7px;
+            -webkit-border-radius: 7px;
+            border-radius: 7px;
+        }
+    }
+
+    .pf_right_6 {
+        background-position: -309px -719px;
+        height: 61px;
+
+        &:hover {
+            background-position: -364px -719px;
+        }
+    }
+
+    .pf_ygs,
+    .pf_weixin {
+        background: url(./images/tubiao.png) no-repeat;
+        position: fixed;
+        left: 50%;
+        margin-left: 403px;
+        z-index: 100;
+        overflow: hidden;
+        display: none;
+        z-index: 9999;
+    }
+    .pf_ygs {
+        background-position: -111px -414px;
+        width: 196px;
+        height: 47px;
+        bottom: 202px;
+    }
+    .pf_weixin {
+        background-position: -111px -461px;
+        width: 198px;
+        height: 254px;
+        bottom: 140px;
+    }
 }
