@@ -1839,3 +1839,73 @@ a:hover {
     float: left;
     cursor: pointer;
 }
+/*底部*/
+.wide-Footer {
+    background: #F0F0F0;
+    margin-top: 20px;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.15) inset;
+    padding-top: 10px;
+    clear: both;
+    font-family: "宋体";
+    a{
+        &:hover {
+            color: #FE6809;
+        }
+    }
+    .FT-A {
+        position: relative;
+        width: 1190px;
+        margin: 0px auto;
+        height: 390px;
+        text-align: center;
+    }
+    .FTA-02 {
+        display: inline-block;
+        padding: 20px 0px 20px 70px;
+        border-top: 1px #fff solid;
+        border-bottom: 1px solid #E0E0E0;
+        ul {
+            display: block;
+            float: left;
+            width: 150px;
+            color: #666;
+        }
+        h4 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        li {
+            line-height: 160%;
+        }
+    }
+    .FTA-03 {
+        border-top: 1px #fff solid;
+        text-align: center;
+        padding: 14px 0;
+        a {
+            margin-right: 5px;
+        }
+        p {
+            text-align: center;
+            padding-top: 5px;
+        }
+    }
+    .FTA-04 {
+        display: block;
+        width: 697px;
+        margin: 0px auto;
+        height: 40px;
+        background: url(./images/FTC_01_bg3.jpg);
+        a {
+            float: left;
+            display: block;
+            width: 118px;
+            height: 40px;
+        }
+    }
+}
+.wide-Footer,
+.wide-Footer a {
+    color: #999;
+}
