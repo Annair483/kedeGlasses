@@ -2,27 +2,466 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/goodsList.css">
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/goodsList.css" />
     <script src="../lib/jquery-3.2.1.js"></script>
 
-    <script src="../js/goodsList.js">
-
-    </script>
+    <script src="../js/goodsList.js"></script>
 </head>
 
 <body>
     <!-- 头部开始 -->
     <div id="header"></div>
     <!-- 头部结束 -->
+    <div class="site_map">
+        <div class="site_map_img"></div>
+        <div>当前位置</div>
+        <span id="spanCurrentLocation"></span>
+        <div class="site_map_arrows">&gt;</div>
+        <div><a href="#">可得眼镜网</a></div>
+        <div class="site_map_arrows">&gt;</div>
+        <div><a href="#">功能眼镜</a></div>
+    </div>
+    <div class="content">
+        <div class="classify_left float-left">
+            <div id="classify_brand">
+                <ul class="classify_tree1">
+                    <li class="on">
+                        <div>
+                            <a href="#">功能眼镜</a>
+                        </div>
+                        <ul class="classify_tree2">
+                            <li class="">
+                                <div><a href="#">&gt; 防蓝光辐射眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div>
+                                            <a href="#">HAN全天候防蓝光护目镜 | 69元起</a>
+                                        </div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Eyezen 适赞 | 499元起</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 游泳眼镜</a></div>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 司机驾驶/骑行运动</a></div>
+                            </li>
+                            <li class="">
+                                <div><a href="#">老花眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div><a href="#">HAN | 防蓝光老光</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Podreader | 旋转折叠</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">方圆 | 轻薄 舒适</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="">
+                        <div>
+                            <a href="#">功能眼镜</a>
+                        </div>
+                        <ul class="classify_tree2">
+                            <li class="">
+                                <div><a href="#">&gt; 防蓝光辐射眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div>
+                                            <a href="#">HAN全天候防蓝光护目镜 | 69元起</a>
+                                        </div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Eyezen 适赞 | 499元起</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 游泳眼镜</a></div>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 司机驾驶/骑行运动</a></div>
+                            </li>
+                            <li class="">
+                                <div><a href="#">老花眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div><a href="#">HAN | 防蓝光老光</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Podreader | 旋转折叠</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">方圆 | 轻薄 舒适</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <div>
+                            <a href="#">功能眼镜</a>
+                        </div>
+                        <ul class="classify_tree2">
+                            <li class="">
+                                <div><a href="#">&gt; 防蓝光辐射眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div>
+                                            <a href="#">HAN全天候防蓝光护目镜 | 69元起</a>
+                                        </div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Eyezen 适赞 | 499元起</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 游泳眼镜</a></div>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 司机驾驶/骑行运动</a></div>
+                            </li>
+                            <li class="">
+                                <div><a href="#">老花眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div><a href="#">HAN | 防蓝光老光</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Podreader | 旋转折叠</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">方圆 | 轻薄 舒适</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <div>
+                            <a href="#">功能眼镜</a>
+                        </div>
+                        <ul class="classify_tree2">
+                            <li class="">
+                                <div><a href="#">&gt; 防蓝光辐射眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div>
+                                            <a href="#">HAN全天候防蓝光护目镜 | 69元起</a>
+                                        </div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Eyezen 适赞 | 499元起</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 游泳眼镜</a></div>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 司机驾驶/骑行运动</a></div>
+                            </li>
+                            <li class="">
+                                <div><a href="#">老花眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div><a href="#">HAN | 防蓝光老光</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Podreader | 旋转折叠</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">方圆 | 轻薄 舒适</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <div>
+                            <a href="#">功能眼镜</a>
+                        </div>
+                        <ul class="classify_tree2">
+                            <li class="">
+                                <div><a href="#">&gt; 防蓝光辐射眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div>
+                                            <a href="#">HAN全天候防蓝光护目镜 | 69元起</a>
+                                        </div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Eyezen 适赞 | 499元起</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 游泳眼镜</a></div>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 司机驾驶/骑行运动</a></div>
+                            </li>
+                            <li class="">
+                                <div><a href="#">老花眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div><a href="#">HAN | 防蓝光老光</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Podreader | 旋转折叠</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">方圆 | 轻薄 舒适</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <div>
+                            <a href="#">功能眼镜</a>
+                        </div>
+                        <ul class="classify_tree2">
+                            <li class="">
+                                <div><a href="#">&gt; 防蓝光辐射眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div>
+                                            <a href="#">HAN全天候防蓝光护目镜 | 69元起</a>
+                                        </div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Eyezen 适赞 | 499元起</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 游泳眼镜</a></div>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 司机驾驶/骑行运动</a></div>
+                            </li>
+                            <li class="">
+                                <div><a href="#">老花眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div><a href="#">HAN | 防蓝光老光</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Podreader | 旋转折叠</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">方圆 | 轻薄 舒适</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <div>
+                            <a href="#">功能眼镜</a>
+                        </div>
+                        <ul class="classify_tree2">
+                            <li class="">
+                                <div><a href="#">&gt; 防蓝光辐射眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div>
+                                            <a href="#">HAN全天候防蓝光护目镜 | 69元起</a>
+                                        </div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Eyezen 适赞 | 499元起</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 游泳眼镜</a></div>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 司机驾驶/骑行运动</a></div>
+                            </li>
+                            <li class="">
+                                <div><a href="#">老花眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div><a href="#">HAN | 防蓝光老光</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Podreader | 旋转折叠</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">方圆 | 轻薄 舒适</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <div>
+                            <a href="#">功能眼镜</a>
+                        </div>
+                        <ul class="classify_tree2">
+                            <li class="">
+                                <div><a href="#">&gt; 防蓝光辐射眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div>
+                                            <a href="#">HAN全天候防蓝光护目镜 | 69元起</a>
+                                        </div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Eyezen 适赞 | 499元起</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 游泳眼镜</a></div>
+                            </li>
+                            <li class="noChild">
+                                <div><a href="#">&gt; 司机驾驶/骑行运动</a></div>
+                            </li>
+                            <li class="">
+                                <div><a href="#">老花眼镜</a></div>
+                                <ul class="classify_tree3">
+                                    <li class="noChild">
+                                        <div><a href="#">HAN | 防蓝光老光</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">Podreader | 旋转折叠</a></div>
+                                    </li>
+                                    <li class="noChild">
+                                        <div><a href="#">方圆 | 轻薄 舒适</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="classify_left_item" id="browserhistory">
+                <div class="classify_title">您的浏览记录</div>
+                <ul id="hot_ranklist">
+                    <li class="on">
+                        <a href="#" target="_blank"><img alt="" src="http://pic.keede.com/main/92445f40-74af-4730-93de-d9c5a4582f14-60-60.jpg" /><label
+                                class="ranklist_name">HAN时尚纯钛偏光太阳镜-黑框墨绿片(HD5825-S01)</label><label class="ranklist_price"><span>￥699.00</span></label></a>
+                    </li>
+                </ul>
+                <div class="classify_cookies_btm"><i></i>清除浏览记录</div>
+            </div>
+        </div>
+        <div class="classify_right float-right">
+            <script type="text/javascript" src="http://pic.keede.com/scripts/publish/jquery.cookie.js?v=20181220163001"></script>
+            <div class="classify_product">
+                <div class="classify_product">
+                    <div class="classify_product_top">
+                        <!--         
+                        <div id="goodsPanel" class=""></div>
+        
+                        <input value="" name="psort" id="psort" type="hidden">
+                        <input value="" name="pwitch" id="pwitch" type="hidden">
+                        <input value="1" name="currentPage" id="currentPage" type="hidden">
+                        <input value="3" name="totalCount" id="totalCount" type="hidden">
+                        <input value="gongneng" name="classSeoCode" id="classSeoCode" type="hidden"> -->
+
+                        <a href="#" class="classify_product_sort" id="sort_zh">综合</a>
+                        <a href="#" class="classify_product_sort" id="sort_xl">销量<i class="classify_product_hp"></i></a>
+                        <a href="#" class="classify_product_sort" id="sort_jg">价格<i class="classify_product_hp"></i></a>
+
+
+                        <p class="classify_product_page">
+                            <b class="classify_product_page_len"><s>1</s>/3</b>
+                            <a class="classify_product_page_prev" title="上一页" onclick="prev_page()">&lt;</a>
+                            <a class="classify_product_page_next" title="下一页" onclick="next_page()">&gt;</a>
+                        </p>
+                    </div>
+                    <div class="classify_product_div">
+                        <ul class="classify_product_ul" id="goodsPanel" style="margin-bottom: 0px;">
+                            <li class="">
+                                <a href="#" target="_blank">
+                                    <img alt="HAN纯钛偏光太阳镜- 黑框黑灰片(HD5827-S01)" src="http://pic.keede.com/main/9280774c-a4ac-42cd-a459-69b425aa4847-218-218.jpg"
+                                        onclick="SetClickPrm_99Click('hant347','功能眼镜','')" onerror="javascript:this.src='http://pic.keede.com/ui/humanity/site/error.jpg';"></a>
+                                <p class="classify_price">
+
+                                    <span><label>￥</label>699.00</span>
+
+                                </p>
+                                <p class="classify_name">
+                                    <a href="#" target="_blank" title="HAN纯钛偏光太阳镜- 黑框黑灰片(HD5827-S01)" onclick="SetClickPrm_99Click('hant347','功能眼镜','')">
+                                        HAN纯钛偏光太阳镜- 黑框黑灰片(HD5827-S01)</a>
+                                </p>
+                                <p class="classify_sales"></p>
+                                <p class="classify_comment wide_f_hot_level">
+                                    <i class="level_9"></i>
+                                    <span>有<label><a target="_blank" href="#">15</a></label>条评论</span>
+                                </p>
+                                <p class="classify_corner">
+
+                                </p>
+
+                                <p class="classify_btn">
+
+                                    <span onclick="shoping_show_async(this,3,'http://pic.keede.com/main/9280774c-a4ac-42cd-a459-69b425aa4847-218-218.jpg','9280774c-a4ac-42cd-a459-69b425aa4847','hant347','/1/hant347.html')"><i
+                                            class="classify_shopping"></i>加入购物车</span>
+                                    <a id="9280774c-a4ac-42cd-a459-69b425aa4847" onclick="addFavorite('9280774c-a4ac-42cd-a459-69b425aa4847')"><span><i
+                                                class="classify_collect"></i>收藏</span><label><i class="classify_collect"></i>已收藏</label></a>
+                                </p>
+
+                            </li>
+                            <li id="html_scroll_line" style="width: 0; height: 0; border: 0;"></li>
+                        </ul>
+                    </div>
+                    <!-- 分页 -->
+                    <div class="classify_pager">
+                        <div class="classify_pager_wraper">
+                            <div class="classify_pager_inner" style="margin-left: -228px;">
+                                <ul class="classify_pager_items">
+                                    <li class="classify_prev" onclick="prev_page()">
+                                        <span class="classify_icon">&lt;&lt;</span>
+                                        <span>上一页</span>
+                                    </li>
+                                    <li class="classify_item">
+                                        <ul id="page">
+                                            <li class="classify_active"> 1</li>
+                                            <li class=""> 2</li>
+                                            <li class=""> 3</li>
+                                        </ul>
+                                    </li>
+                                    <li class="classify_next" onclick="next_page()">
+                                        <span>下一页</span>
+                                        <span class="classify_icon">&gt;&gt;</span>
+                                    </li>
+                                </ul>
+                                <div class="classify_form">
+                                    共 <s>3</s> 页，到第<input class="classify_input" value="1" type="text">页<input onclick="pager_btn()"
+                                        class="classify_pager_btn" value="确定" type="button">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- 底部开始 -->
     <div id="footer"></div>
     <!-- 底部结束 -->
+
     <!-- 右侧漂浮开始 -->
     <div id="pf_right"></div>
     <!-- 右侧漂浮结束 -->

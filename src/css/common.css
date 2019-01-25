@@ -1,7 +1,91 @@
 @charset "UTF-8";
 /*公共样式*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 微软雅黑, 黑体, 宋体, Arial, Helvetica, sans-serif;
+}
+
 body {
   font-size: 12px;
+  margin: 0px;
+  background-color: White;
+}
+
+a,
+a:link {
+  color: #666666;
+  text-decoration: none;
+  font-family: 微软雅黑, 黑体, 宋体, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+a:hover {
+  color: #ff6600;
+  text-decoration: none;
+}
+
+button {
+  border: 0px solid;
+  background: none;
+  cursor: pointer;
+}
+
+form,
+label,
+input,
+textarea,
+span {
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  margin: 0px;
+  padding-top: 0px;
+}
+
+img {
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  margin: 0px;
+  padding-top: 0px;
+  border: 0px solid;
+}
+
+table {
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  margin: 0px;
+  padding-top: 0px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
 }
 
 .clear {
@@ -13,14 +97,6 @@ body {
   line-height: 0px;
 }
 
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
-}
-
 .content {
   width: 1190px;
   margin: 0 auto;
@@ -29,19 +105,6 @@ body {
 i {
   background: url(./images/tubiao.png) no-repeat;
   overflow: hidden;
-}
-
-a,
-a:link {
-  color: #666666;
-  font-family: 微软雅黑, 黑体, 宋体, Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #ff6600;
-  text-decoration: none;
 }
 
 /*头部跟随*/

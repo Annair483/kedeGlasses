@@ -1,0 +1,700 @@
+@charset "UTF-8";
+.site_map {
+  width: 1190px;
+  height: 25px;
+  margin: 15px auto;
+}
+
+.site_map div {
+  height: 25px;
+  line-height: 25px;
+  font-size: 12px;
+  color: #666;
+  float: left;
+  padding: 0px 2px 0px 2px;
+}
+
+.site_map .site_map_arrows {
+  font-family: 宋体;
+}
+
+.site_map .site_map_img {
+  width: 20px;
+  height: 15px;
+  background: url(./images/tubiao.png) no-repeat;
+  background-position: left -92px;
+  margin-top: 5px;
+}
+
+/*左侧区域*/
+.classify_left {
+  width: 210px;
+  margin-bottom: 30px;
+}
+
+#classify_brand {
+  width: 208px;
+  border: 1px solid #eee;
+  border-top: 3px solid #90c31f;
+  overflow: hidden;
+}
+
+#classify_brand .classify_tree1 .classify_tree2 {
+  padding: 5px 0 5px 0;
+}
+
+#classify_brand .classify_tree1 .classify_tree2 div a {
+  color: #666;
+}
+
+#classify_brand .classify_tree1 .on .classify_tree2 .hover .classify_tree3 div a {
+  color: #999;
+}
+
+#classify_brand .classify_tree1 .on .classify_tree2 .on .classify_tree3 .hover .classify_tree4 div a {
+  color: #ccc;
+}
+
+#classify_brand .classify_tree1 .on .classify_tree2 .on .classify_tree3 .on .classify_tree4 .hover div a {
+  color: #ff6600;
+}
+
+#classify_brand .classify_tree1 .on div {
+  background-position: left -757px;
+}
+
+#classify_brand .classify_tree1 div {
+  padding-left: 25px;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid #d9d9d9;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  white-space: nowrap;
+  background-image: url(./images/tubiao.png);
+  background-position: left -786px;
+}
+
+#classify_brand .classify_tree1 div a {
+  color: #6d9d03;
+  font-size: 14px;
+}
+
+#classify_brand .classify_tree1 div a:hover {
+  color: #ff6600;
+}
+
+#classify_brand .classify_tree2 .classify_tree3 div a {
+  color: #999;
+}
+
+#classify_brand .classify_tree2 div {
+  background-color: #fff;
+  border: 0;
+  height: 26px;
+  line-height: 26px;
+}
+
+#classify_brand .classify_tree2 div a {
+  color: #666666;
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+#classify_brand .classify_tree2 .noChild div a {
+  margin-left: 0px;
+}
+
+#classify_brand .classify_tree3 .classify_tree4 div a {
+  color: #ccc;
+}
+
+#classify_brand .classify_tree3 div {
+  margin-left: 20px;
+}
+
+#classify_brand .classify_tree3 div a {
+  color: #999999;
+  margin-left: 20px;
+}
+
+#classify_brand .classify_tree3 .noChild div a {
+  margin-left: 0px;
+}
+
+#classify_brand .classify_tree4 div {
+  margin-left: 40px;
+}
+
+#classify_brand .classify_tree4 div a {
+  color: #cccccc;
+}
+
+#classify_brand .classify_tree2,
+#classify_brand .classify_tree3,
+#classify_brand .classify_tree4 {
+  display: none;
+}
+
+#classify_brand .classify_tree1 .on .classify_tree2,
+#classify_brand .classify_tree1 .on .classify_tree2 .on .classify_tree3,
+#classify_brand .classify_tree1 .on .classify_tree2 .on .classify_tree3 .on .classify_tree4 {
+  display: block;
+}
+
+#classify_brand .classify_tree1 .hover .classify_tree2 div,
+#classify_brand .classify_tree1 .on .classify_tree2 div,
+#classify_brand .classify_tree1 .on .classify_tree2 .on .classify_tree3 div {
+  background-position: 20px -849px;
+}
+
+#classify_brand .classify_tree1 .on .classify_tree2 .on div,
+#classify_brand .classify_tree1 .on .classify_tree2 .on .classify_tree3 .on div {
+  background-position: 20px -819px;
+}
+
+#classify_brand .classify_tree1 .noChild div,
+#classify_brand .classify_tree1 .on .classify_tree2 .noChild div,
+#classify_brand .classify_tree1 .on .classify_tree2 .on .classify_tree3 .noChild div {
+  background-image: none;
+}
+
+/*浏览记录*/
+.classify_left_item {
+  width: 208px;
+  border: 1px solid #e9e9e9;
+  border-top: 3px solid #90c31f;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.classify_left_item .classify_title {
+  width: 198px;
+  height: 27px;
+  padding-left: 10px;
+  border-bottom: 1px solid #e9e9e9;
+  font-size: 14px;
+  line-height: 27px;
+  color: #666666;
+}
+
+.classify_left_item .classify_cont {
+  width: 198px;
+  height: 299px;
+  padding: 0 5px 0 5px;
+  border-bottom: 1px solid #e9e9e9;
+  overflow: hidden;
+}
+
+.classify_left_item .classify_img {
+  width: 198px;
+  height: 198px;
+}
+
+.classify_left_item .classify_img img {
+  width: 198px;
+  height: 198px;
+}
+
+.classify_left_item .classify_price {
+  height: 26px;
+  line-height: 30px;
+  color: #999;
+  font-size: 12px;
+  padding: 0 5px 0 5px;
+}
+
+.classify_left_item .classify_price span {
+  color: #f60;
+  font-size: 16px;
+}
+
+.classify_left_item .classify_name {
+  height: 40px;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 0 5px 0 5px;
+  overflow: hidden;
+}
+
+.classify_left_item .classify_name a {
+  color: #666666;
+}
+
+.classify_left_item .wide_f_hot_level {
+  width: auto;
+  height: auto;
+  padding: 0px;
+  position: inherit;
+  right: 0px;
+  top: 0px;
+}
+
+.classify_left_item .wide_f_hot_level i {
+  width: 84px;
+  height: 15px;
+  overflow: hidden;
+  float: left;
+  display: inline-block;
+}
+
+.classify_left_item .classify_comment {
+  height: 32px;
+  color: #666666;
+  font-size: 12px;
+  line-height: 32px;
+  border-top: 1px solid #e9e9e9;
+  position: relative;
+  overflow: hidden;
+}
+
+.classify_left_item .classify_comment i {
+  width: 84px;
+  height: 15px;
+  overflow: hidden;
+  float: left;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.classify_left_item .classify_comment .level_0 {
+  background-position: -367px -215px;
+}
+
+.classify_left_item .classify_comment .level_1 {
+  background-position: -367px -199px;
+}
+
+.classify_left_item .classify_comment .level_2 {
+  background-position: -367px -119px;
+}
+
+.classify_left_item .classify_comment .level_3 {
+  background-position: -367px -183px;
+}
+
+.classify_left_item .classify_comment .level_4 {
+  background-position: -367px -103px;
+}
+
+.classify_left_item .classify_comment .level_5 {
+  background-position: -367px -167px;
+}
+
+.classify_left_item .classify_comment .level_6 {
+  background-position: -367px -87px;
+}
+
+.classify_left_item .classify_comment .level_7 {
+  background-position: -367px -151px;
+}
+
+.classify_left_item .classify_comment .level_8 {
+  background-position: -367px -71px;
+}
+
+.classify_left_item .classify_comment .level_9 {
+  background-position: -367px -135px;
+}
+
+.classify_left_item .classify_comment .level_10 {
+  background-position: -367px -55px;
+}
+
+.classify_left_item .classify_comment label {
+  margin-left: 5px;
+}
+
+.classify_left_item .classify_comment label span {
+  color: #ff6600;
+}
+
+.classify_left_item .classify_cookies_btm {
+  width: 154px;
+  height: 34px;
+  cursor: pointer;
+  padding-left: 55px;
+  line-height: 34px;
+  margin-top: 20px;
+  border: 1px solid #e9e9e9;
+  border-width: 1px 0 1px 0;
+  color: #666666;
+}
+
+.classify_left_item .classify_cookies_btm i {
+  display: inline-block;
+  width: 25px;
+  height: 21px;
+  vertical-align: -20%;
+  background-position: -53px -884px;
+}
+
+.classify_left_item .classify_cookies_btm:hover {
+  color: #f60;
+}
+
+#hot_ranklist {
+  width: 188px;
+  padding: 0 10px 0 10px;
+}
+
+#hot_ranklist li {
+  padding: 5px 0 5px 30px;
+  height: 18px;
+  line-height: 18px;
+  border-bottom: 1px dotted #e9e9e9;
+  position: relative;
+}
+
+#hot_ranklist li img {
+  display: none;
+}
+
+#hot_ranklist li i {
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  top: 5px;
+  left: 2px;
+}
+
+#hot_ranklist .ranklist_name {
+  width: 158px;
+  height: 18px;
+  line-height: 18px;
+  display: block;
+  color: #666666;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#hot_ranklist .ranklist_price {
+  display: none;
+  color: #999999;
+}
+
+#hot_ranklist .ranklist_price span {
+  color: #ff6600;
+}
+
+#hot_ranklist .on {
+  padding: 5px 0 5px 0;
+  height: 65px;
+}
+
+#hot_ranklist .on img {
+  display: block;
+  float: left;
+}
+
+#hot_ranklist .on .ranklist_name {
+  width: 125px;
+  height: 36px;
+  position: absolute;
+  left: 65px;
+  top: 10px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+#hot_ranklist .on .ranklist_price {
+  display: block;
+  position: absolute;
+  left: 65px;
+  top: 46px;
+}
+
+/*右侧区域*/
+.classify_right {
+  width: 960px;
+  overflow: hidden;
+}
+
+.classify_product {
+  width: 100%;
+  margin-top: 20px;
+  overflow: hidden;
+  /*分页*/
+}
+
+.classify_product .classify_product_top {
+  height: 26px;
+  padding: 4px;
+  background-color: #f5f5f5;
+}
+
+.classify_product .classify_product_top a:hover {
+  color: #ff6600;
+  background-color: #f1edec;
+}
+
+.classify_product .classify_product_top #sort_zh {
+  padding: 0 10px;
+}
+
+.classify_product .classify_product_top .classify_product_hp,
+.classify_product .classify_product_top .classify_product_jg,
+.classify_product .classify_product_top .classify_product_cx {
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  background: url(./images/tubiao.png) no-repeat;
+  width: 9px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.classify_product .classify_product_top .classify_product_sort {
+  color: #666666;
+  position: relative;
+  display: inline-block;
+  margin-left: -1px;
+  overflow: hidden;
+  padding: 0px 20px 0px 5px;
+  float: left;
+  height: 24px;
+  line-height: 24px;
+  border: 1px solid #CCC;
+  background-color: #FFF;
+}
+
+.classify_product .classify_product_top .classify_product_hp,
+.classify_product .classify_product_top .classify_product_jg,
+.classify_product .classify_product_top .classify_product_cx {
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  background: url(./images/tubiao.png) no-repeat;
+  width: 9px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.classify_product .classify_product_top .classify_product_hp {
+  background-position: 0px -917px;
+}
+
+.classify_product .classify_product_top .classify_product_jg {
+  background-position: 0px -928px;
+}
+
+.classify_product .classify_product_top .classify_product_cx {
+  width: 12px;
+  height: 12px;
+  top: 6px;
+  background-position: -63px -911px;
+}
+
+.classify_product .classify_product_top .classify_product_page {
+  float: right;
+  height: 26px;
+  overflow: hidden;
+  color: #666;
+}
+
+.classify_product .classify_product_top .classify_product_page_len,
+.classify_product .classify_product_top .classify_product_page_prev,
+.classify_product .classify_product_top .classify_product_page_next {
+  float: left;
+  display: inline;
+  margin-left: 3px;
+}
+
+.classify_product .classify_product_top .classify_product_page_len {
+  background: none repeat scroll 0px 0px transparent;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.classify_product .classify_product_top .classify_product_page_len s {
+  text-decoration: none;
+}
+
+.classify_product .classify_product_top .classify_product_page_prev,
+.classify_product .classify_product_top .classify_product_page_next {
+  width: 20px;
+  margin-top: 3px;
+  padding: 4px 0px 2px;
+  line-height: 1;
+  font-weight: 700;
+  font-family: 宋体;
+  font-size: 12px;
+  text-align: center;
+  background-color: #FFF;
+  border: 1px solid #E5E5E5;
+  cursor: pointer;
+}
+
+.classify_product .classify_product_ul {
+  width: 990px;
+}
+
+.classify_product .classify_product_ul li {
+  width: 218px;
+  height: 348px;
+  border: 1px solid #ccc;
+  margin: 20px 20px 0 4px;
+  background-color: #fff;
+  float: left;
+  position: relative;
+  z-index: 1;
+}
+
+.classify_product .classify_product_ul li .classify_btn {
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: 6px;
+  border-top: 1px solid #ccc;
+  display: none;
+}
+
+.classify_product .classify_product_ul li .classify_btn span,
+.classify_product .classify_product_ul li .classify_btn label {
+  height: 20px;
+  line-height: 20px;
+  background-color: #ff6600;
+  border: 1px solid #f60;
+  color: #fff;
+  padding: 0 15px 0 0;
+  margin: 5px 26px 0 5px;
+  float: left;
+  cursor: pointer;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.classify_product .classify_product_ul li .classify_btn span .classify_shopping {
+  background-position: -2px -940px;
+}
+
+.classify_product .classify_product_ul li .classify_btn span .classify_collect {
+  background-position: -2px -956px;
+}
+
+.classify_product .classify_product_ul li .classify_btn span i,
+.classify_product .classify_product_ul li .classify_btn a label i {
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  margin: 2px 10px 0 5px;
+  float: left;
+}
+
+.classify_product .classify_product_ul li .classify_btn a span,
+.classify_product .classify_product_ul li .classify_btn a label {
+  margin: 5px 0 0 0;
+  background-color: #fff;
+  color: #f60;
+}
+
+.classify_product .classify_product_ul li .classify_btn a label {
+  display: none;
+  padding: 0 5px 0 0;
+}
+
+.classify_product .classify_product_ul .dis {
+  display: none;
+}
+
+.classify_product .classify_product_ul .classify_price,
+.classify_product .classify_product_ul .classify_name,
+.classify_product .classify_product_ul .classify_sales {
+  height: 18px;
+  padding: 0 5px 0 5px;
+  line-height: 18px;
+  overflow: hidden;
+}
+
+.classify_product .classify_product_ul .classify_name {
+  height: 40px;
+}
+
+.classify_product .classify_product_ul img {
+  width: 218px;
+  height: 218px;
+}
+
+.classify_product .classify_product_ul .classify_price {
+  color: #999;
+  height: 24px;
+  line-height: 24px;
+  margin-bottom: 5px;
+}
+
+.classify_product .classify_product_ul .classify_price span {
+  color: #ff6600;
+  font-size: 24px;
+  float: left;
+}
+
+.classify_product .classify_product_ul .classify_price span label {
+  font-size: 12px;
+}
+
+.classify_product .classify_product_ul .classify_price span b {
+  height: 18px;
+  line-height: 18px;
+  padding: 0 5px;
+  font-weight: 100;
+  margin-top: 3px;
+  color: #fff;
+  font-size: 10px;
+  background-color: #f60;
+  float: left;
+}
+
+.classify_product .classify_product_ul .classify_price span .c_p_i {
+  width: 4px;
+  height: 4px;
+  background-position: -10px -928px;
+  float: left;
+  margin: 17px 0 0 10px;
+}
+
+.classify_product .classify_product_ul .classify_name {
+  height: 40px;
+}
+
+.classify_product .classify_product_ul .classify_sales {
+  width: 208px;
+  overflow: hidden;
+}
+
+.classify_product .classify_product_ul .classify_comment {
+  height: 32px;
+  margin: 8px 5px 0 4px;
+  border-top: 1px solid #ccc;
+}
+
+.classify_product .classify_product_ul .classify_comment span {
+  margin: 9px 0 0 5px;
+  line-height: 28px;
+  color: #666;
+}
+
+.classify_product .classify_product_ul .classify_comment span label {
+  color: #ff6600;
+}
+
+.classify_product .classify_product_ul .wide_f_hot_level {
+  width: 208px;
+  padding: 0px;
+  position: absolute;
+  left: 1px;
+  top: 309px;
+}
+
+.classify_product .classify_product_ul .wide_f_hot_level i {
+  width: 84px;
+  height: 15px;
+  overflow: hidden;
+  float: left;
+  display: inline-block;
+  margin: 7px 1px 0 0px;
+}
+
+.classify_product .classify_product_ul .wide_f_hot_level i.level_9 {
+  background-position: -367px -135px;
+}
