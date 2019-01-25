@@ -1,15 +1,14 @@
-
 jQuery(function ($) {
-    $("#header").load("html/header.html");
-    $("#footer").load("html/footer.html");
-    let pf_right = new Promise((resolve, reject) => {
-        $("#pf_right").load("html/pf_right.html", function () {
+   let pf_right =  new Promise((resolve, reject) => {
+        $("#pf_right").load("pf_right.html",function(){
             resolve()
         });
     })
+    $("#header").load("header.html");
+    $("#footer").load("footer.html");
     //右侧漂浮
     pf_right.then(aaa)
-    function aaa() {
+    function aaa(){
         let $pf_right_4 = $('.pf_right_4');
         let $pf_right_3 = $('.pf_right_3');
         let $pf_ygs = $('.pf_ygs');
@@ -30,7 +29,6 @@ jQuery(function ($) {
                 scrollTop: ($($(this).attr('href')).offset().top - 50)
             }, 1000);
         })
-        console.log($pf_right_4[0])
     }
-
+   
 })
