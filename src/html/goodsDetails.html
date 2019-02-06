@@ -2,21 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/common.css" />
-    <link rel="stylesheet" href="../css/goodsList.css" />
+    <link rel="stylesheet" href="../css/goodsDetails.css" />
     <script src="../lib/jquery-3.2.1.js"></script>
-    <script src="../js/goodsList.js"></script>
+    <script src="../js/goodsDetails.js"></script>
 </head>
 
 <body>
     <!-- 头部开始 -->
     <div id="header"></div>
     <!-- 头部结束 -->
+    <!-- 分页导航开始 -->
     <div class="site_map">
         <div class="site_map_img"></div>
         <div>当前位置</div>
@@ -25,8 +26,119 @@
         <div><a href="#">可得眼镜网</a></div>
         <div class="site_map_arrows">&gt;</div>
         <div><a href="#">功能眼镜</a></div>
+        <div class="site_map_arrows">&gt;</div>
+        <div><a href="#">防蓝光辐射眼镜</a></div>
     </div>
+    <!-- 分页导航结束 -->
+
     <div class="content">
+        <!-- 商品详情上半部分 -->
+        <div class="details_top clearfix">
+            <div class="float-left">
+                <div class="details_top_img">
+                    <img class="jqzoom" src="http://pic.keede.com/extend/fa7e4c45-dbbe-4069-b290-b80385961dfe-720-720.jpg"
+                        rel="http://pic.keede.com/extend/fa7e4c45-dbbe-4069-b290-b80385961dfe.jpg" alt="" style="cursor: crosshair;">
+                </div>
+                <div class="details_top_img_s">
+                    <div id="slist" class="slist" style="width: 392px; margin-left: 114px;">
+                        <ul style="width: 392px;">
+                            <li class="">
+                                <img alt="" src="http://pic.keede.com/extend/25de1b73-c49b-42cf-8d59-43a34af3d777-88-88.jpg"
+                                    mid="http://pic.keede.com/extend/25de1b73-c49b-42cf-8d59-43a34af3d777-720-720.jpg"
+                                    big="http://pic.keede.com/extend/25de1b73-c49b-42cf-8d59-43a34af3d777.jpg">
+                            </li>
+                            <li class="">
+                                <img alt="" src="http://pic.keede.com/extend/86178bc9-d22f-4b9d-adc5-748136a8c8d7-88-88.jpg"
+                                    mid="http://pic.keede.com/extend/86178bc9-d22f-4b9d-adc5-748136a8c8d7-720-720.jpg"
+                                    big="http://pic.keede.com/extend/86178bc9-d22f-4b9d-adc5-748136a8c8d7.jpg">
+                            </li>
+                            <li class="">
+                                <img alt="" src="http://pic.keede.com/extend/0278a4be-7161-42f8-9f20-63b243670686-88-88.jpg"
+                                    mid="http://pic.keede.com/extend/0278a4be-7161-42f8-9f20-63b243670686-720-720.jpg"
+                                    big="http://pic.keede.com/extend/0278a4be-7161-42f8-9f20-63b243670686.jpg">
+                            </li>
+                            <li class="hover">
+                                <img alt="" src="http://pic.keede.com/extend/fa7e4c45-dbbe-4069-b290-b80385961dfe-88-88.jpg"
+                                    mid="http://pic.keede.com/extend/fa7e4c45-dbbe-4069-b290-b80385961dfe-720-720.jpg"
+                                    big="http://pic.keede.com/extend/fa7e4c45-dbbe-4069-b290-b80385961dfe.jpg">
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" id="btn_frame_try_one" target="_blank"><i></i></a>
+                    <input id="hid_tryon_img" value="" type="hidden">
+                </div>
+                <div class="details_top_share_collect">
+                    <b id="share">
+                        <i class="details_top_share"></i>
+                        <span>分享</span>
+                        <span class="share_s">
+                            <a href="#" _share="sina" title="微博"><i class="sina"></i></a>
+                            <a href="#" _share="qzone" title="QQ空间"><i class="qzone"></i></a>
+                            <a href="#"><i class="weixin"></i></a>
+                            <a class="weixin_twocode"><img src="http://weixin.keede.com/QrCode/GoodsUrl/09397d4b-52ea-4220-a753-2ae4eda11b48"><b>用微信扫描二维码<br>分享至朋友圈</b></a>
+                        </span>
+                    </b>
+                    <b id="09397d4b-52ea-4220-a753-2ae4eda11b48" class="collect"><i class="details_top_collect"></i><span>收藏商品（已被70人收藏）</span></b>
+                </div>
+            </div>
+            <div class="details_top_r float-right ">
+                <div class="details_top_name">
+                    <span>
+                        HAN BLUELESS全天候防蓝光护目眼镜-亮黑(HN3101-C6)平光</span>
+                    <div class="clear"></div>
+                </div>
+                <div class="details_top_message">
+                    <!--用于替换 details_top_message 标签内内容-->
+                    <div class="details_top_message_price">
+                        <div class="message_title message_title_name">可得价<b>：</b></div>
+                        <div class="message_price">￥169.00</div>
+                        <div class="message_price_kd">市场价：<b>￥458.00</b></div>
+                    </div>
+                    <div class="details_top_message_sales">
+                        <div class="message_title">促销信息：</div>
+                        <div class="message_sales">
+                            <p><b>换购</b><a href="#" target="_blank" title=""><img alt="赫俪妃 水漾保湿面膜 28ml*1片" src="http://pic.keede.com/main/f405a6e5-517b-4efb-926d-b6d2f308c997-130-130.jpg"
+                                        title="赫俪妃 水漾保湿面膜 28ml*1片"></a><label>+3.99元换购赫俪妃补水面膜1片装（有效期至2019.5.30）</label></p>
+                            <p><b>换购</b><a href="#" target="_blank" title=""><img alt="珍视明蒸汽热敷眼罩10片装-洋甘菊" src="http://pic.keede.com/main/522e5fad-8784-4345-800e-cc0c474a85ca-130-130.jpg"
+                                        title="珍视明蒸汽热敷眼罩10片装-洋甘菊"></a><label>+37.9元换购珍视明蒸汽眼罩</label></p>
+                            <p><b>换购</b><a href="#" target="_blank" title=""><img alt="珍视明护眼贴15对装-通用型" src="http://pic.keede.com/main/c04f1387-db9f-414f-85a6-9e2f0f66a904-130-130.jpg"
+                                        title="珍视明护眼贴15对装-通用型"></a><label>+32.9元换购珍视明眼贴</label></p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="details_top_message_integral">
+                        <span class="message_title">赠送积分：</span>
+                        <span class="message_price_save">169 积分</span>
+                        <span class="message_title">编号：</span>
+                        <span class="message_price_save">FM16B029</span>
+                    </div>
+                </div>
+                <div class="details_top_select clearfix">
+                    <div class="clear"></div>
+                    <div class="details_top_select_color">
+                    </div>
+                    <div class="clear"></div>
+                    <input value="0" id="isChooseMatchGlass" type="hidden">
+                    <input value="" id="operateButton" type="hidden">
+                    <div class="clear"></div>
+                    <div class="details_btn">
+                        <div id="buy" class="details_purchasebtn">立即购买</div>
+                        <div id="appendCart" class="details_shoppingbtn">
+                            <div>加入购物车</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="details_service clearfix">
+                        <div class="message_title">服务承诺：</div>
+                        <div class="service_text"><i class="s_t_1"></i>正品保证</div>
+                        <div class="service_text"><i class="s_t_3"></i>30天随心退换</div>
+                        <div class="service_text"><i class="s_t_4"></i>满80免运费</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 左侧导航及浏览记录开始 -->
         <div class="classify_left float-left">
             <div id="classify_brand">
                 <ul class="classify_tree1">
@@ -364,106 +476,12 @@
                 <div class="classify_cookies_btm"><i></i>清除浏览记录</div>
             </div>
         </div>
-        <div class="classify_right float-right">
-            <script type="text/javascript" src="http://pic.keede.com/scripts/publish/jquery.cookie.js?v=20181220163001"></script>
-            <div class="classify_product">
-                <div class="classify_product">
-                    <div class="classify_product_top">
-                        <!--         
-                        <div id="goodsPanel" class=""></div>
-        
-                        <input value="" name="psort" id="psort" type="hidden">
-                        <input value="" name="pwitch" id="pwitch" type="hidden">
-                        <input value="1" name="currentPage" id="currentPage" type="hidden">
-                        <input value="3" name="totalCount" id="totalCount" type="hidden">
-                        <input value="gongneng" name="classSeoCode" id="classSeoCode" type="hidden"> -->
-
-                        <a href="#" class="classify_product_sort" id="sort_zh">综合</a>
-                        <a href="#" class="classify_product_sort" id="sort_xl">销量<i class="classify_product_hp"></i></a>
-                        <a href="#" class="classify_product_sort" id="sort_jg">价格<i class="classify_product_hp"></i></a>
-
-
-                        <p class="classify_product_page">
-                            <b class="classify_product_page_len"><s>1</s>/3</b>
-                            <a class="classify_product_page_prev" title="上一页" onclick="prev_page()">&lt;</a>
-                            <a class="classify_product_page_next" title="下一页" onclick="next_page()">&gt;</a>
-                        </p>
-                    </div>
-                    <div class="classify_product_div">
-                        <ul class="classify_product_ul" id="goodsPanel" style="margin-bottom: 0px;">
-                            <li class="">
-                                <a href="#" target="_blank">
-                                    <img alt="HAN纯钛偏光太阳镜- 黑框黑灰片(HD5827-S01)" src="http://pic.keede.com/main/9280774c-a4ac-42cd-a459-69b425aa4847-218-218.jpg"
-                                        onclick="SetClickPrm_99Click('hant347','功能眼镜','')" onerror="javascript:this.src='http://pic.keede.com/ui/humanity/site/error.jpg';"></a>
-                                <p class="classify_price">
-
-                                    <span><label>￥</label>699.00</span>
-
-                                </p>
-                                <p class="classify_name">
-                                    <a href="#" target="_blank" title="HAN纯钛偏光太阳镜- 黑框黑灰片(HD5827-S01)" onclick="SetClickPrm_99Click('hant347','功能眼镜','')">
-                                        HAN纯钛偏光太阳镜- 黑框黑灰片(HD5827-S01)</a>
-                                </p>
-                                <p class="classify_sales"></p>
-                                <p class="classify_comment wide_f_hot_level">
-                                    <i class="level_9"></i>
-                                    <span>有<label><a target="_blank" href="#">15</a></label>条评论</span>
-                                </p>
-                                <p class="classify_corner">
-
-                                </p>
-
-                                <p class="classify_btn">
-
-                                    <span onclick="shoping_show_async(this,3,'http://pic.keede.com/main/9280774c-a4ac-42cd-a459-69b425aa4847-218-218.jpg','9280774c-a4ac-42cd-a459-69b425aa4847','hant347','/1/hant347.html')"><i
-                                            class="classify_shopping"></i>加入购物车</span>
-                                    <a id="9280774c-a4ac-42cd-a459-69b425aa4847" onclick="addFavorite('9280774c-a4ac-42cd-a459-69b425aa4847')"><span><i
-                                                class="classify_collect"></i>收藏</span><label><i class="classify_collect"></i>已收藏</label></a>
-                                </p>
-
-                            </li>
-                            <li id="html_scroll_line" style="width: 0; height: 0; border: 0;"></li>
-                        </ul>
-                    </div>
-                    <!-- 分页 -->
-                    <div class="classify_pager">
-                        <div class="classify_pager_wraper">
-                            <div class="classify_pager_inner" style="margin-left: -228px;">
-                                <ul class="classify_pager_items">
-                                    <li class="classify_prev" onclick="prev_page()">
-                                        <span class="classify_icon">&lt;&lt;</span>
-                                        <span>上一页</span>
-                                    </li>
-                                    <li class="classify_item">
-                                        <ul id="page">
-                                            <li class="classify_active"> 1</li>
-                                            <li class=""> 2</li>
-                                            <li class=""> 3</li>
-                                        </ul>
-                                    </li>
-                                    <li class="classify_next" onclick="next_page()">
-                                        <span>下一页</span>
-                                        <span class="classify_icon">&gt;&gt;</span>
-                                    </li>
-                                </ul>
-                                <div class="classify_form">
-                                    共 <s>3</s> 页，到第<input class="classify_input" value="1" type="text">页<input onclick="pager_btn()"
-                                        class="classify_pager_btn" value="确定" type="button">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- 左侧导航及浏览记录结束 -->
     </div>
-    <!-- 底部开始 -->
-    <div id="footer"></div>
-    <!-- 底部结束 -->
 
-    <!-- 右侧漂浮开始 -->
-    <div id="pf_right"></div>
-    <!-- 右侧漂浮结束 -->
+    <!-- 脚部开始 -->
+    <div id="footer"></div>
+    <!-- 脚部结束 -->
 </body>
 
 </html>

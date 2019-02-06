@@ -1,12 +1,23 @@
 
 jQuery(function ($) {
-    $("#header").load("html/header.html");
+    let header = new Promise((resolve, reject) => {
+        $("#header").load("html/header.html", function () {
+            resolve()
+        });
+    })
+    // $("#header").load("html/header.html");
     $("#footer").load("html/footer.html");
     let pf_right = new Promise((resolve, reject) => {
         $("#pf_right").load("html/pf_right.html", function () {
             resolve()
         });
     })
+    // 转跳
+    header.then(redirects)
+    function redirects(){
+        let $a = $('.list_item>h3>a');
+        $a.attr('href','html/goodsList.html')
+    }
     //右侧漂浮
     pf_right.then(aaa)
     function aaa() {
@@ -30,7 +41,6 @@ jQuery(function ($) {
                 scrollTop: ($($(this).attr('href')).offset().top - 50)
             }, 1000);
         })
-        console.log($pf_right_4[0])
     }
 
 })
