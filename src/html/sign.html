@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,166 +12,169 @@
     <script src="../lib/jquery-3.2.1.js"></script>
     <script src="../js/sign.js"></script>
 </head>
+
 <body>
     <!--头部跟随开始-->
-<div id="wide_user_tool_bar">
-    <div class="content info content">
-        <div class="fav fl"><a rel="sidebar" id="favSideBar" href="#">收藏可得网</a></div>
-        <div class="fl" id="userTooleBarMemberStatus">
-            <div class="float-left" id="userTooleBarMemberStatus">
-                您好，欢迎光临可得眼镜网！<a class="to-login" href="#" target="_self">登录</a><a href="#" class="to-register" target="_self">[免费注册]</a></div>
-            <!-- js渲染文字 -->
-        </div>
-        <div class="menu fr">
-            <span class='menu_tab menu_tab_lq'><a rel='nofollow' href='#'>我的优惠券<span id="headCouponQuantity"></span></a></span>
-            <span class="menu_tab menu_tab_bzzx"><a href="#" target="_self" class="arrow">我的可得</a><i></i>
-                <ul class="sub-item">
-                    <li><a href="#" target="_self" rel="nofollow">我的订单</a></li>
-                    <li><a href="#" target="_self" rel="nofollow">我的收藏</a></li>
-                    <li><a href="#" target="_blank">积分兑换</a></li>
-                    <li><a href="#" target="_self" rel="nofollow">我的验光单</a></li>
-                </ul>
-            </span>
-            <span class="menu_tab menu_tab_bzzx"><a href="#" target="_blank" class="arrow">帮助中心</a><i></i>
-                <ul class="sub-item">
-                    <li><a href="#" target="_blank">常见问题</a></li>
-                    <li><a href="#" target="_blank">退货换货</a></li>
-                    <li><a href="#" target="_blank" rel="nofollow">快递查询</a></li>
-                    <li><a href="#" target="_blank">眼镜学堂</a></li>
-                    <li><a href="#" target="_blank" rel="nofollow">优惠券使用</a></li>
-                    <li><a href="#" target="_blank" rel="nofollow">投诉建议</a></li>
-                    <li><a href="#" target="_blank">网站地图</a></li>
-                </ul>
-            </span>
-            <span>|</span>
-            <span class="menu_tab menu_tab_gwc">
-                <a rel="nofollow" href="#">购物车<span id="menu_tab_cart"></span>件</a>
-            </span>
-            <span class="menu_tab menu_tab_phone">
-                <a class="arrow_phone">手机版</a>
-                <span class="menu_tab_phone_img"></span>
-            </span>
-            <span class="menu_tab_qq">
-                <i></i>
-                <a href="#" onclick="CallNtkfParam()">客服电话：4006-20-20-20 ( 8:30-23:45 )</a>
-            </span>
-        </div>
-    </div>
-</div>
-<!--头部跟随结束-->
-<div class="header">
-    <div>
-        <a href="/">
-            <img alt="logo" src="../css/images/kede_logo.gif"></a>
-        <h2>欢迎登录</h2>
-        <div class="header_text">
-            为确保您账户的安全及正常使用，依《网络安全法》相关要求，即日起会员账户需绑定手机号，若提示账号已存在可尝试重置密码等操作后再次登录，如您还未绑定，请尽快完成，感谢您的理解与支持！
+    <div id="wide_user_tool_bar">
+        <div class="content info content">
+            <div class="fav fl"><a rel="sidebar" id="favSideBar" href="#">收藏可得网</a></div>
+            <div class="fl" id="userTooleBarMemberStatus">
+                <div class="float-left" id="userTooleBarMemberStatus">
+                    您好，欢迎光临可得眼镜网！<a class="to-login" href="#" target="_self">登录</a><a href="#" class="to-register"
+                        target="_self">[免费注册]</a></div>
+                <!-- js渲染文字 -->
+            </div>
+            <div class="menu fr">
+                <span class='menu_tab menu_tab_lq'><a rel='nofollow' href='#'>我的优惠券<span id="headCouponQuantity"></span></a></span>
+                <span class="menu_tab menu_tab_bzzx"><a href="#" target="_self" class="arrow">我的可得</a><i></i>
+                    <ul class="sub-item">
+                        <li><a href="#" target="_self" rel="nofollow">我的订单</a></li>
+                        <li><a href="#" target="_self" rel="nofollow">我的收藏</a></li>
+                        <li><a href="#" target="_blank">积分兑换</a></li>
+                        <li><a href="#" target="_self" rel="nofollow">我的验光单</a></li>
+                    </ul>
+                </span>
+                <span class="menu_tab menu_tab_bzzx"><a href="#" target="_blank" class="arrow">帮助中心</a><i></i>
+                    <ul class="sub-item">
+                        <li><a href="#" target="_blank">常见问题</a></li>
+                        <li><a href="#" target="_blank">退货换货</a></li>
+                        <li><a href="#" target="_blank" rel="nofollow">快递查询</a></li>
+                        <li><a href="#" target="_blank">眼镜学堂</a></li>
+                        <li><a href="#" target="_blank" rel="nofollow">优惠券使用</a></li>
+                        <li><a href="#" target="_blank" rel="nofollow">投诉建议</a></li>
+                        <li><a href="#" target="_blank">网站地图</a></li>
+                    </ul>
+                </span>
+                <span>|</span>
+                <span class="menu_tab menu_tab_gwc">
+                    <a rel="nofollow" href="#">购物车<span id="menu_tab_cart"></span>件</a>
+                </span>
+                <span class="menu_tab menu_tab_phone">
+                    <a class="arrow_phone">手机版</a>
+                    <span class="menu_tab_phone_img"></span>
+                </span>
+                <span class="menu_tab_qq">
+                    <i></i>
+                    <a href="#" onclick="CallNtkfParam()">客服电话：4006-20-20-20 ( 8:30-23:45 )</a>
+                </span>
+            </div>
         </div>
     </div>
-</div>
-<div class="main">
-    <div class="main_bg">
-        <a href="#" target="_blank"><img alt="ad" src="../css/images/lodin.jpg" style=" "></a>
-        <div id="quickLoginwindow" style="display:none;position:absolute;width:340px;">
-            <div class="login_cover"></div>
-            <div class="login_right login_cont_bg">
-                <div class="l_r_title">
-                    <label class="active">扫描登录</label><span>|</span><label>帐号登录</label>
-                </div>
-                <div class="j_saoma" style="text-align: center; font-size: 0px;display: none;">
-                    <div class="l_qrcode_content">
-                        <img id="Jqrcode" src="../css/images/qrcode_142.jpg">
-                        <img id="Jcode_timeout" src="../css/images/qrcode-timeout.png" style="display: none">
-                        <div class="l_tip_text">
-                            <i></i>
-                            <label>
-                                登录<a>可得眼镜app</a>
-                                <br>
-                                扫一扫安全登录
-                            </label>
-                        </div>
+    <!--头部跟随结束-->
+    <div class="header">
+        <div>
+            <a href="/">
+                <img alt="logo" src="../css/images/kede_logo.gif"></a>
+            <h2>欢迎登录</h2>
+            <div class="header_text">
+                为确保您账户的安全及正常使用，依《网络安全法》相关要求，即日起会员账户需绑定手机号，若提示账号已存在可尝试重置密码等操作后再次登录，如您还未绑定，请尽快完成，感谢您的理解与支持！
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main_bg">
+            <a href="#" target="_blank"><img alt="ad" src="../css/images/lodin.jpg" style=" "></a>
+            <div id="quickLoginwindow" style="display:none;position:absolute;width:340px;">
+                <!-- <div class="login_cover"></div> -->
+                <div class="login_right login_cont_bg">
+                    <div class="l_r_title">
+                        <label class="active">扫描登录</label><span>|</span><label>帐号登录</label>
                     </div>
-                    <div class="l_tip_app" style="">
-                        <img src="../css/images/saomatip.png">
-                        <img class="down_app" id="Jdown_app" src="../css/images/down_app.png">
-                        <img class="down_app" id="Jdown_app_hover" src="../css/images/down_app_hover.png" style="display:none">
-                    </div>
-                </div>
-                <div class="j_zhanghao" style="display: block;">
-                    <form id="fLogin" class="form" method="post" onsubmit="return false">
-
-                        <div class="r_username">
-                            <p>
-                                <span></span><b></b>
-                                <input type="text" id="UserName" name="UserName" placeholder="请输入您的手机、邮箱、用户名" value=""
-                                    autocomplete="off">
-                            </p>
-                        </div>
-                        <div class="r_error">
-                        </div>
-                        <div class="r_pwd">
-                            <p>
-                                <span></span><b></b>
-                                <input type="password" id="Password" name="Password" placeholder="请输入您的密码" value=""
-                                    autocomplete="off">
-                                <input type="text" id="Password_show" style="display: none">
+                    <div class="j_saoma" style="text-align: center; font-size: 0px;display: none;">
+                        <div class="l_qrcode_content">
+                            <img id="Jqrcode" src="../css/images/qrcode_142.jpg">
+                            <img id="Jcode_timeout" src="../css/images/qrcode-timeout.png" style="display: none">
+                            <div class="l_tip_text">
                                 <i></i>
-                            </p>
+                                <label>
+                                    登录<a>可得眼镜app</a>
+                                    <br>
+                                    扫一扫安全登录
+                                </label>
+                            </div>
                         </div>
-                        <div class="r_error">
+                        <div class="l_tip_app" style="">
+                            <img src="../css/images/saomatip.png">
+                            <img class="down_app" id="Jdown_app" src="../css/images/down_app.png">
+                            <img class="down_app" id="Jdown_app_hover" src="../css/images/down_app_hover.png" style="display:none">
                         </div>
-                        <div class="r_remeber">
-                            <s class="position13" id="RemberAccount" val="1"></s>
-                            <label>记住账户</label>
-                            <s class="" id="AutoLogin" val="2"></s>
-                            <label>自动登录</label>
-                            <a href="#">？忘记密码</a>
-                        </div>
-                        <div class="r_submit">
-                            <input type="button" id="loginPanel-submitbtn" class="button" value="登录">
-                        </div>
-                    </form>
-                </div>
-                <div class="l_r_cont_botton">
-                    <a class="weixin"></a>
-                    <a class="qq"></a>
-                    <a class="sina"></a>
-                    <a class="zhifubao" id="btn-alipay"></a>
-                    <div class="toRegister"><a href="#">立即注册<i></i></a></div>
+                    </div>
+                    <div class="j_zhanghao" style="display: block;">
+                        <form id="fLogin" class="form" method="post" onsubmit="return false">
+
+                            <div class="r_username">
+                                <p>
+                                    <span></span><b></b>
+                                    <input type="text" id="UserName" name="UserName" placeholder="请输入您的手机、邮箱、用户名" value=""
+                                        autocomplete="off">
+                                </p>
+                            </div>
+                            <div class="r_error">
+                            </div>
+                            <div class="r_pwd">
+                                <p>
+                                    <span></span><b></b>
+                                    <input type="password" id="Password" name="Password" placeholder="请输入您的密码" value=""
+                                        autocomplete="off">
+                                    <input type="text" id="Password_show" style="display: none">
+                                    <i></i>
+                                </p>
+                            </div>
+                            <div class="r_error">
+                            </div>
+                            <div class="r_remeber">
+                                <s class="position13" id="RemberAccount" val="1"></s>
+                                <label>记住账户</label>
+                                <s class="" id="AutoLogin" val="2"></s>
+                                <label>自动登录</label>
+                                <a href="#">？忘记密码</a>
+                            </div>
+                            <div class="r_submit">
+                                <input type="button" id="loginPanel-submitbtn" class="button" value="登录">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="l_r_cont_botton">
+                        <a class="weixin"></a>
+                        <a class="qq"></a>
+                        <a class="sina"></a>
+                        <a class="zhifubao" id="btn-alipay"></a>
+                        <div class="toRegister"><a href="#">立即注册<i></i></a></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- 底部开始 -->
-<div class="wide-Footer">
-    <div class="FT-A">
-        <div class="FTA-03">
-            <p><a href="#" rel="nofollow" target="_blank">上海可得光学科技有限公司</a></p>
-            <a href="#" target="_blank" rel="nofollow">联系我们</a>
-            <span>|</span>
-            <a href="#" target="_blank">友情链接</a>
-            <span>|</span>
-            <a href="#" target="_blank">眼镜百科</a>
-            <span>|</span>
-            <a href="#" target="_blank">网站地图</a>
-            <span>|</span>
-            <a href="#" rel="nofollow" target="_blank">隐私安全</a>
-            <p>
-                Copyright 2006-2018 可得眼镜 KEDE.com 版权所有
-                <a href="#" rel="nofollow" target="_blank">沪ICP备14001373号</a>
-                <a href="#" rel="nofollow" target="_blank"><img src="../css/images/ba.png" alt="">沪公网安备
-                    31010702003385号</a> 全国服务热线：4006-20-20-20
-            </p>
-        </div>
-        <div class="FTA-04">
-            <a href="#" rel="nofollow" target="_blank"></a>
-            <a href="#" rel="nofollow" target="_blank"></a>
-            <a href="#" rel="nofollow" target="_blank"></a>
-            <a href="#" rel="nofollow" target="_blank"></a>
+    <!-- 底部开始 -->
+    <div class="wide-Footer">
+        <div class="FT-A">
+            <div class="FTA-03">
+                <p><a href="#" rel="nofollow" target="_blank">上海可得光学科技有限公司</a></p>
+                <a href="#" target="_blank" rel="nofollow">联系我们</a>
+                <span>|</span>
+                <a href="#" target="_blank">友情链接</a>
+                <span>|</span>
+                <a href="#" target="_blank">眼镜百科</a>
+                <span>|</span>
+                <a href="#" target="_blank">网站地图</a>
+                <span>|</span>
+                <a href="#" rel="nofollow" target="_blank">隐私安全</a>
+                <p>
+                    Copyright 2006-2018 可得眼镜 KEDE.com 版权所有
+                    <a href="#" rel="nofollow" target="_blank">沪ICP备14001373号</a>
+                    <a href="#" rel="nofollow" target="_blank"><img src="../css/images/ba.png" alt="">沪公网安备
+                        31010702003385号</a> 全国服务热线：4006-20-20-20
+                </p>
+            </div>
+            <div class="FTA-04">
+                <a href="#" rel="nofollow" target="_blank"></a>
+                <a href="#" rel="nofollow" target="_blank"></a>
+                <a href="#" rel="nofollow" target="_blank"></a>
+                <a href="#" rel="nofollow" target="_blank"></a>
+            </div>
         </div>
     </div>
-</div>
-<!-- 底部结束 -->
+    <!-- 底部结束 -->
 </body>
+
 </html>
