@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/register.css" />
     <script src="../lib/jquery-3.2.1.js"></script>
+    <script src="../lib/gVerify.js"></script>
     <script src="../js/register.js"></script>
 </head>
 
@@ -93,7 +94,7 @@
                         <li class="passwd">
                             <label class="icon_label"><i class="lock"></i></label>
                             <b></b>
-                            <input type="text" id="Jusername" style="display:none">
+                         
                             <input type="password" id="RPassword" name="Password" class="text-box" placeholder="密码由6-15位字母、数字或字符组成"
                                 >
                             <i class="eye_content"></i>
@@ -101,8 +102,8 @@
                         <li class="passwd">
                             <label class="icon_label"><i class="lock"></i></label>
                             <b></b>
-                            <input type="text" id="Jusername" style="display:none">
-                            <input type="password" id="RPassword" name="Password" class="text-box" placeholder="请再次输入相同密码"
+                         
+                            <input type="password" id="RPassword2" name="Password" class="text-box" placeholder="请再次输入相同密码"
                                 >
                             <i class="eye_content"></i>
                         </li>
@@ -111,7 +112,7 @@
                             <b></b>
                             <input type="text" class="text-box" id="regValidate2" name="ValidatesMobile" maxlength="8"
                                 placeholder="请输入验证码" autocomplete="off">
-                            <a id="btnGetRegistVerifyCode" class="">获取验证码</a>
+                            <div id="v_container" ></div>
                         </li>
                        
                     </ul>

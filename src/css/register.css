@@ -198,7 +198,8 @@
 }
 
 .right_top .shouji a,
-.right_top .shouji .mam {
+.right_top .shouji .mam,
+.right_top .shouji #v_container {
   width: 104px;
   height: 32px;
   line-height: 32px;
@@ -291,4 +292,8 @@
 
 .right_bottom a span:hover {
   color: #f60;
+}
+
+.right_bottom .position13 {
+  background-position: -13px -432px;
 }

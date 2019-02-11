@@ -1,5 +1,5 @@
 <?php
-    $uname = isset($_GET["uname"])?$_GET["uname"]:null;
+    $uname = isset($_POST["uname"])?$_POST["uname"]:null;
     header("content-type:text/html;charset=utf-8");
 	include 'connect.php';
     $res = $conn -> query('select uname from sign where uname="'.$uname.'"');

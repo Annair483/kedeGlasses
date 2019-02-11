@@ -206,7 +206,8 @@
         }
 
         a,
-        .mam {
+        .mam,
+        #v_container {
             width: 104px;
             height: 32px;
             line-height: 32px;
@@ -227,7 +228,9 @@
             color: #fff;
             cursor: pointer;
             background-color: #f60;
+            // display: none;
         }
+
     }
 }
 
@@ -302,5 +305,9 @@
                 color: #f60;
             }
         }
+    }
+
+    .position13 {
+        background-position: -13px -432px;
     }
 }

@@ -12,7 +12,7 @@
 	$servername = 'localhost';//主机名
 	$username = 'root';//登陆数据库的用户名
 	$password = '';//如果用wamp就是为空，用phpstudy 密码是 root
-	$dbname = 'try';//数据库名称
+	$dbname = 'kede';//数据库名称
 	
 	//创建数据库连接
 	$conn = new mysqli($servername,$username,$password,$dbname);
