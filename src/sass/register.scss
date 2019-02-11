@@ -2,30 +2,37 @@
     padding-top: 0;
     box-shadow: none;
     margin-top: 0;
+
     .FT-A {
         text-align: center;
         height: 150px;
     }
 }
+
 .header {
     height: 57px;
     padding-top: 52px;
     padding-bottom: 34px;
     padding-left: 200px;
     background: #f2f2f2;
+
     div {
         width: 1190px;
         margin: 0 auto;
     }
+
     img {
         width: 196px;
         display: block;
         background-repeat: no-repeat;
-      
+
     }
-    h2,a{
+
+    h2,
+    a {
         float: left;
     }
+
     h2 {
         line-height: 81px;
         margin-left: 20px;
@@ -33,6 +40,7 @@
         font-size: 18px;
         font-weight: 100;
     }
+
     .header_text {
         width: 510px;
         // height: 40px;
@@ -43,4 +51,150 @@
         border: 1px solid #edae1b;
         color: #666;
     }
+}
+
+.main {
+    position: relative;
+    width: auto;
+    height: 480px;
+    margin: 0 auto;
+    background: #d62d30;
+    .main_bg {
+        width: 998px;
+        height: 480px;
+        margin: 0 auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+
+
+.bg_temp {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    a {
+        max-height: 480px;
+    }
+}
+
+.box {
+    width: 340px;
+    height: 400px;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    clear: right;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.zhuce {
+    margin: 30px 30px 0 30px;
+    height: 40px;
+    line-height: 40px;
+
+    .zhuce_text {
+        color: #f60;
+        font-size: 22px;
+        float: left;
+        font-weight: bold;
+    }
+
+    .zhuce_login {
+        float: right;
+
+        a {
+            font-size: 12px;
+            color: #f60;
+            display: inline;
+            padding-right: 5px;
+            vertical-align: inherit;
+        }
+
+        i {
+            float: right;
+            width: 16px;
+            height: 16px;
+            margin-top: 12px;
+            display: inline-block;
+            background-position: -412px -940px;
+        }
+    }
+}
+
+.d_left_main {
+    width: 280px;
+    margin: 15px auto;
+}
+
+.right_top {
+    li {
+        position: relative;
+        height: 38px;
+        margin-top: 10px;
+        border: 1px solid #bdbdbd;
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+
+        &:hover {
+            border-color: #90c31f;
+        }
+
+        i {
+            display: inline-block;
+            float: left;
+            width: 42px;
+        }
+
+        input {
+            width: 235px;
+            position: relative;
+            height: 38px;
+            line-height: 38px;
+            float: left;
+            text-indent: 5px;
+            border: 0px;
+            outline: none;
+            font-size: 14px;
+            padding-left: 43px;
+            background-color: #fff;
+        }
+
+        label {
+            i {
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+                &.mobile {
+                    background-position: -502px -911px;
+                }
+
+                &.shield {
+                    background-position: -526px -911px;
+                }
+                &.lock {
+                    background-position: -550px -911px;
+                }
+            }
+        }
+    }
+}
+
+.icon_label {
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    width: 36px;
+    height: 18px;
+    text-align: center;
+    z-index: 9;
 }
