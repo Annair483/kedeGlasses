@@ -1,0 +1,97 @@
+checkUname.php     注册时验证用户名
+传  uname: 用户名
+返回 0   即用户名已注册
+返回 1   即用户名可注册
+
+已验证可用
+
+
+
+
+registers.php      用户注册
+传 uname:注册的用户名
+   upw:注册密码
+返回 1   即注册成功
+
+已验证可用
+
+
+
+
+
+sgin.php             用户登录
+传  uname:登录的用户名
+    upw:登录密码
+返回 [1,token,uid]  登录成功  token为加密后的用户名
+返回 0  登录失败
+
+已验证可用
+
+
+
+getUserMessage.php    获取用户信息
+传 token: token值
+返回[{用户的信息}，{code:0}]   获取成功
+返回 1   获取失败
+
+已验证可用
+
+
+
+
+goodsDetails.php    详情页获取单个商品信息
+传 gid:商品ID
+返回  {该商品的所有信息}
+
+已验证可用
+
+
+
+
+goodsList.php    列表页数据渲染,页码,商品排序
+传 qty: 每页渲染的数量，
+   currentPage : 当前页数
+   fieldName : 字段集名 可不传 不传默认不排序
+   sort : asc/desc   升/降序  可不传默认升序
+
+返回 {data：商品数据，len：商品总数量，qty:每页渲染的数量,currentPage:当前页数}
+
+已验证可用
+
+
+
+
+
+shoppingCart.php   商品加入购物车，订单表增加商品信息，获取用户订单信息，渲染页面
+传 uid: 用户id，
+   gid：商品id，
+   qty：加入购物车商品数量
+
+返回[该用户所有订单商品信息]
+
+已验证可用
+
+
+
+
+
+changeOrder.php    、
+改变商品qty  
+传 {
+   oid:订单表商品id，
+   qty: 改变后的商品数量
+}
+删除商品 
+ 传 {
+   oid:订单表商品id，
+   del: 1/0  1为del商品/0为不del商品   默认不del
+}
+删除所有商品
+传 {
+   Alldel: 1/0  1为Alldel商品/0为不Alldel商品   默认不Alldel,
+   uid: 用户id
+}
+
+返回 1 即功能操作成功
+
+已验证可用
