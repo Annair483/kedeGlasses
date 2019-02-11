@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/register.css" />
+    <script src="../lib/jquery-3.2.1.js"></script>
+    <script src="../js/register.js"></script>
+</head>
+<body>
+     <!--头部跟随开始-->
+     <div id="wide_user_tool_bar">
+        <div class="content info content">
+            <div class="fav fl"><a rel="sidebar" id="favSideBar" href="#">收藏可得网</a></div>
+            <div class="fl" id="userTooleBarMemberStatus">
+                <div class="float-left" id="userTooleBarMemberStatus">
+                    您好，欢迎光临可得眼镜网！<a class="to-login" href="#" target="_self">登录</a><a href="#" class="to-register"
+                        target="_self">[免费注册]</a></div>
+                <!-- js渲染文字 -->
+            </div>
+            <div class="menu fr">
+                <span class='menu_tab menu_tab_lq'><a rel='nofollow' href='#'>我的优惠券<span id="headCouponQuantity"></span></a></span>
+                <span class="menu_tab menu_tab_bzzx"><a href="#" target="_self" class="arrow">我的可得</a><i></i>
+                    <ul class="sub-item">
+                        <li><a href="#" target="_self" rel="nofollow">我的订单</a></li>
+                        <li><a href="#" target="_self" rel="nofollow">我的收藏</a></li>
+                        <li><a href="#" target="_blank">积分兑换</a></li>
+                        <li><a href="#" target="_self" rel="nofollow">我的验光单</a></li>
+                    </ul>
+                </span>
+                <span class="menu_tab menu_tab_bzzx"><a href="#" target="_blank" class="arrow">帮助中心</a><i></i>
+                    <ul class="sub-item">
+                        <li><a href="#" target="_blank">常见问题</a></li>
+                        <li><a href="#" target="_blank">退货换货</a></li>
+                        <li><a href="#" target="_blank" rel="nofollow">快递查询</a></li>
+                        <li><a href="#" target="_blank">眼镜学堂</a></li>
+                        <li><a href="#" target="_blank" rel="nofollow">优惠券使用</a></li>
+                        <li><a href="#" target="_blank" rel="nofollow">投诉建议</a></li>
+                        <li><a href="#" target="_blank">网站地图</a></li>
+                    </ul>
+                </span>
+                <span>|</span>
+                <span class="menu_tab menu_tab_gwc">
+                    <a rel="nofollow" href="#">购物车<span id="menu_tab_cart"></span>件</a>
+                </span>
+                <span class="menu_tab menu_tab_phone">
+                    <a class="arrow_phone">手机版</a>
+                    <span class="menu_tab_phone_img"></span>
+                </span>
+                <span class="menu_tab_qq">
+                    <i></i>
+                    <a href="#" onclick="CallNtkfParam()">客服电话：4006-20-20-20 ( 8:30-23:45 )</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!--头部跟随结束-->
+    <div class="header">
+        <div>
+            <a href="/">
+                <img alt="logo" src="../css/images/kede_logo.gif"></a>
+            <h2>欢迎登录</h2>
+            <div class="header_text">
+                为确保您账户的安全及正常使用，依《网络安全法》相关要求，即日起会员账户需绑定手机号，若提示账号已存在可尝试重置密码等操作后再次登录，如您还未绑定，请尽快完成，感谢您的理解与支持！
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main_bg">
+            <div class="bg_temp">
+                <a href="#" target="_blank"><img alt="ad" src="https://pic.keede.com/event/2019/2019cjzhc/login_d62d30.jpg"
+                        style=" "></a>
+            </div>
+            <input type="text" style="display:none">
+            <input type="password" autocomplete="new-password" style="display:none">
+            <form class="box" id="Register"  method="post" action="#">
+                <div class="zhuce">
+                    <div class="zhuce_text">手机号注册</div>
+                    <div class="zhuce_login">已有帐号?去<a href="#">登录<i></i></a></div>
+                </div>
+                <div class="d_left_main">
+                    <ul class="right_top">
+                        <li>
+                            <label class="icon_label"><i class="mobile"></i></label>
+                            <b></b>
+                            <input type="text" maxlength="11"  class="text-box" id="RUserName"
+                                value="" name="UserName" placeholder="请输入手机号" autocomplete="off">
+                        </li>
+    
+                        <li class="ma">
+                            <input type="text" id="regValidate1" name="Validates" maxlength="8" 
+                                value="" class="text-box" placeholder="请输入图形验证码" autocomplete="off">
+                            <img alt="" src="/image/validates?validKey=CheckCodeRegister" class="revalimg" >
+                        </li>
+                        <li class="shouji">
+                            <label class="icon_label"><i class="shield"></i></label>
+                            <b></b>
+                            <input type="text" class="text-box" id="regValidate2" name="ValidatesMobile" maxlength="8"
+                               placeholder="请输入手机验证码" autocomplete="off">
+                            <a  id="btnGetRegistVerifyCode" class="">获取验证码</a>
+                        </li>
+                        <li class="passwd">
+                            <label class="icon_label"><i class="lock"></i></label>
+                            <b></b>
+                            <input type="text" id="Jusername" style="display:none">
+                            <input type="password"  id="RPassword" name="Password" class="text-box"
+                                placeholder="密码由6-15位字母、数字或字符组成" autocomplete="new-password" aria-autocomplete="list">
+                            <input type="text" id="RPassword_show" style="display:none">
+                            <i class="eye_content"></i>
+                        </li>
+                        <li id="hdli" style="height: 20px;">
+                            <p id="hdLanguageVerification">
+                                <span id="LanguageVeificationTip">若长时间未获取到验证码，请点击&nbsp;<a href="#" id="sendLanguageVerificationCode">语音验证码</a>&nbsp;</span>
+                                <input type="hidden" id="languageVerificationMobile">
+                                <input type="hidden" id="languageVerificationType" value="0">
+                                <input type="hidden" id="languageVerificationIsMobileOrEmail" value="True">
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="ECT"></div>
+                    <input type="button" class="registerSlide"  id="RegisterSumbitBtn" value="立即注册">
+                    <div class="right_bottom">
+                        <s id="agreeme"></s>
+                        <label>我已阅读并同意</label>
+                        <a href="#"><span>《可得用户注册协议》</span></a>
+                    </div>
+                </div>
+                <input type="hidden" name=".UhzngT" value="BZpB-etl">
+                <input type="hidden" name="IsAlcon" value="False">
+            </form>
+            <div class="regesuce"></div>
+            <div class="perfectaccount">
+                <p class="perfecttitle">完善账号信息，保护账号安全</p>
+                <div class="perfecleft">
+                    <div class="perfec_div"><i class="perfec_left_i"></i></div>
+                    <div class="left_div">
+                        <p><a href="#">完善个人资料&gt;</a>（10积分）</p>
+                        <p>完善您的个人信息有助于我们更好地为您服务。</p>
+                    </div>
+                </div>
+                <div class="perfecright">
+                    <div class="perfec_div"><i class="perfec_right_i"></i></div>
+                    <div class="right_div">
+                        <p><a href="#">提升账号安全&gt;</a>（验证邮箱送100积分）</p>
+                        <p>绑定您的邮箱。有助于提升您的账号安全。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部开始 -->
+    <div class="wide-Footer">
+        <div class="FT-A">
+            <div class="FTA-03">
+                <p><a href="#" rel="nofollow" target="_blank">上海可得光学科技有限公司</a></p>
+                <a href="#" target="_blank" rel="nofollow">联系我们</a>
+                <span>|</span>
+                <a href="#" target="_blank">友情链接</a>
+                <span>|</span>
+                <a href="#" target="_blank">眼镜百科</a>
+                <span>|</span>
+                <a href="#" target="_blank">网站地图</a>
+                <span>|</span>
+                <a href="#" rel="nofollow" target="_blank">隐私安全</a>
+                <p>
+                    Copyright 2006-2018 可得眼镜 KEDE.com 版权所有
+                    <a href="#" rel="nofollow" target="_blank">沪ICP备14001373号</a>
+                    <a href="#" rel="nofollow" target="_blank"><img src="../css/images/ba.png" alt="">沪公网安备
+                        31010702003385号</a> 全国服务热线：4006-20-20-20
+                </p>
+            </div>
+            <div class="FTA-04">
+                <a href="#" rel="nofollow" target="_blank"></a>
+                <a href="#" rel="nofollow" target="_blank"></a>
+                <a href="#" rel="nofollow" target="_blank"></a>
+                <a href="#" rel="nofollow" target="_blank"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 底部结束 -->
+</body>
+</html>
