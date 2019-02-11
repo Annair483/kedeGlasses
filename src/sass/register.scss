@@ -59,6 +59,7 @@
     height: 480px;
     margin: 0 auto;
     background: #d62d30;
+
     .main_bg {
         width: 998px;
         height: 480px;
@@ -174,6 +175,7 @@
                 width: 24px;
                 height: 24px;
                 line-height: 24px;
+
                 &.mobile {
                     background-position: -502px -911px;
                 }
@@ -181,10 +183,50 @@
                 &.shield {
                     background-position: -526px -911px;
                 }
+
                 &.lock {
                     background-position: -550px -911px;
                 }
             }
+        }
+
+        &.ma {
+            input {
+                width: 156px;
+                padding-left: 10px
+            }
+        }
+    }
+
+    .shouji {
+        background-color: #fff;
+
+        input {
+            width: 124px;
+        }
+
+        a,
+        .mam {
+            width: 104px;
+            height: 32px;
+            line-height: 32px;
+            color: #fff;
+            cursor: pointer;
+            background-color: #999;
+            margin: 3px;
+            text-align: center;
+            text-decoration: none;
+            overflow: hidden;
+            display: inline-block;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+        }
+
+        .mam {
+            color: #fff;
+            cursor: pointer;
+            background-color: #f60;
         }
     }
 }
@@ -197,4 +239,68 @@
     height: 18px;
     text-align: center;
     z-index: 9;
+}
+
+.ma {
+    background-color: #fff;
+
+    img {
+        margin: 3px;
+        float: left;
+    }
+}
+
+.ECT {
+    color: #f60;
+    width: 280px;
+    height: 25px;
+    line-height: 25px;
+    display: inline-block;
+    text-align: left;
+}
+
+.registerNoSlide,
+.registerSlide {
+    margin-bottom: 7px;
+    *margin-left: 48px;
+    border: 0;
+    cursor: pointer;
+    background: #999;
+    color: #fff;
+    font-size: 16px;
+    width: 280px;
+    height: 36px;
+    border-radius: 3px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.registerSlide {
+    background: #f60;
+
+    &:hover {
+        background: #f80;
+    }
+}
+
+.right_bottom {
+    margin-top: 2px;
+
+    s {
+        margin-right: 4px;
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        background: url(./images/allbgs.png) no-repeat 0px -432px;
+    }
+
+    a {
+        span {
+            color: #6d9d03;
+
+            &:hover {
+                color: #f60;
+            }
+        }
+    }
 }
