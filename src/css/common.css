@@ -139,6 +139,11 @@ i {
   color: #e5e5e5;
 }
 
+#wide_user_tool_bar .info .menu .menu_tab_lq span,
+#wide_user_tool_bar .info .menu .menu_tab_gwc span {
+  color: #ff6600;
+}
+
 #wide_user_tool_bar .info .menu .menu_tab {
   position: relative;
   z-index: 200;

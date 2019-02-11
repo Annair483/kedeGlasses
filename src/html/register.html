@@ -47,7 +47,7 @@
                 </span>
                 <span>|</span>
                 <span class="menu_tab menu_tab_gwc">
-                    <a rel="nofollow" href="#">购物车<span id="menu_tab_cart"></span>件</a>
+                    <a rel="nofollow" href="#">购物车<span id="menu_tab_cart">0</span>件</a>
                 </span>
                 <span class="menu_tab menu_tab_phone">
                     <a class="arrow_phone">手机版</a>
@@ -91,19 +91,6 @@
                             <input type="text" maxlength="11" class="text-box" id="RUserName" value="" name="UserName"
                                 placeholder="请输入手机号" autocomplete="off">
                         </li>
-
-                        <li class="ma">
-                            <input type="text" id="regValidate1" name="Validates" maxlength="8" value="" class="text-box"
-                                placeholder="请输入图形验证码" autocomplete="off">
-                            <img alt="" src="#" class="revalimg">
-                        </li>
-                        <li class="shouji">
-                            <label class="icon_label"><i class="shield"></i></label>
-                            <b></b>
-                            <input type="text" class="text-box" id="regValidate2" name="ValidatesMobile" maxlength="8"
-                                placeholder="请输入手机验证码" autocomplete="off">
-                            <a id="btnGetRegistVerifyCode" class="">获取验证码</a>
-                        </li>
                         <li class="passwd">
                             <label class="icon_label"><i class="lock"></i></label>
                             <b></b>
@@ -113,6 +100,28 @@
                             <input type="text" id="RPassword_show" style="display:none">
                             <i class="eye_content"></i>
                         </li>
+                        <li class="passwd">
+                            <label class="icon_label"><i class="lock"></i></label>
+                            <b></b>
+                            <input type="text" id="Jusername" style="display:none">
+                            <input type="password" id="RPassword" name="Password" class="text-box" placeholder="再次输入相同密码"
+                                autocomplete="new-password" aria-autocomplete="list">
+                            <input type="text" id="RPassword_show" style="display:none">
+                            <i class="eye_content"></i>
+                        </li>
+                        <!-- <li class="ma">
+                            <input type="text" id="regValidate1" name="Validates" maxlength="8" value="" class="text-box"
+                                placeholder="请输入图形验证码" autocomplete="off">
+                            <img alt="" src="#" class="revalimg">
+                        </li> -->
+                        <li class="shouji">
+                            <label class="icon_label"><i class="shield"></i></label>
+                            <b></b>
+                            <input type="text" class="text-box" id="regValidate2" name="ValidatesMobile" maxlength="8"
+                                placeholder="请输入验证码" autocomplete="off">
+                            <a id="btnGetRegistVerifyCode" class="">获取验证码</a>
+                        </li>
+                       
                     </ul>
                     <div class="ECT"></div>
                     <input type="button" class="registerSlide" id="RegisterSumbitBtn" value="立即注册">
