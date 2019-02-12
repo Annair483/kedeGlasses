@@ -1,25 +1,14 @@
-
 jQuery(function ($) {
-    let header = new Promise((resolve, reject) => {
-        $("#header").load("html/header.html", function () {
-            resolve()
-        });
-    })
-    // $("#header").load("html/header.html");
+    $("#header").load("html/header.html")
     $("#footer").load("html/footer.html");
     let pf_right = new Promise((resolve, reject) => {
         $("#pf_right").load("html/pf_right.html", function () {
             resolve()
         });
     })
-    // 转跳
-    header.then(redirects)
-    function redirects(){
-        let $a = $('.list_item>h3>a');
-        $a.attr('href','html/goodsList.html')
-    }
     //右侧漂浮
     pf_right.then(aaa)
+
     function aaa() {
         let $pf_right_4 = $('.pf_right_4');
         let $pf_right_3 = $('.pf_right_3');
@@ -40,6 +29,16 @@ jQuery(function ($) {
             $('html,body').animate({
                 scrollTop: ($($(this).attr('href')).offset().top - 50)
             }, 1000);
+        })
+    }
+    //进入页面前先判断是否为登录状态
+    let autoLogin = localStorage['autoLogin'];
+    if(autoLogin=='yes'){
+        let token = localStorage['token'];
+        $.ajax({
+            type:'GET',
+            dataType:'json',
+            url:''
         })
     }
 

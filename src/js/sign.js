@@ -8,11 +8,12 @@
      let $r_error = $(".r_error");
      let $remeberAgree = $(".r_remeber s");
      //进入页面判断是否记住账号
-     let remember_account = localStorage['remember_account'] || '';
-     if (remember_account == 'yes') {
+     let remember_account = localStorage['remember_account']||'';
+     if(remember_account=='yes'){
          $remeberAgree.eq(0).addClass('position13');
          $UserName.val(localStorage['uname']);
      }
+  
      //登录窗口选项切换
      $title.eq(0).addClass('active');
      $loginWindow.eq(0).show();
@@ -62,6 +63,7 @@
                  }
              })
          }
+
      })
      //登录成功执行事件
      function successfulRequest(res, _UserName, _Password) {
@@ -77,8 +79,10 @@
              //判断是否自动登录
              if ($remeberAgree.eq(1).hasClass('position13')) {
                  localStorage['token'] = res.token;
+                 localStorage['autoLogin'] = "yes";
              } else {
                  sessionStorage['token'] = res.token;
+                 localStorage['autoLogin'] = "no";
              }
          } else {
              $r_error.eq(0).html('账户或密码错误')
