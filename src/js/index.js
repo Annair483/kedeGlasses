@@ -1,6 +1,8 @@
 jQuery(function ($) {
     $("#header").load("html/header.html")
     $("#footer").load("html/footer.html");
+    let $userTooleBarMemberStatus = $("#userTooleBarMemberStatus");
+
     let pf_right = new Promise((resolve, reject) => {
         $("#pf_right").load("html/pf_right.html", function () {
             resolve()
@@ -31,15 +33,5 @@ jQuery(function ($) {
             }, 1000);
         })
     }
-    //进入页面前先判断是否为登录状态
-    let autoLogin = localStorage['autoLogin'];
-    if(autoLogin=='yes'){
-        let token = localStorage['token'];
-        $.ajax({
-            type:'GET',
-            dataType:'json',
-            url:''
-        })
-    }
-
+   
 })
