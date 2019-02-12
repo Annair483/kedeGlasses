@@ -75,8 +75,8 @@
   float: left;
 }
 
-.sy_prev,
-.sy_next {
+.prev,
+.next {
   position: absolute;
   width: 21px;
   height: 47px;
@@ -85,16 +85,47 @@
   background: url(./images/play_button1.png) no-repeat 0px 0px;
   cursor: pointer;
   z-index: 10000;
+  opacity: 0.6;
+  display: none;
 }
 
-.sy_prev:hover,
-.sy_next:hover {
-  display: block;
-}
-
-.sy_next {
+.next {
   right: 0px;
   background-position: -738px 0px;
+}
+
+/*焦点样式*/
+.dot {
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 302px;
+  text-align: center;
+}
+
+.dot .light {
+  display: inline-block;
+  opacity: 0.7;
+  border-radius: 30px;
+  width: 156px;
+}
+
+.dot .light span {
+  width: 18px;
+  height: 18px;
+  border-radius: 20px;
+  display: inline-block;
+  background: #333;
+  margin: 2px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 18px;
+  font-weight: normal;
+}
+
+.dot .light span.cur {
+  background: #94c51b;
 }
 
 .wide_classify {

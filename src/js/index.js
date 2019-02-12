@@ -1,89 +1,92 @@
-// jQuery(function ($) {
-//     let autoLogin = localStorage['autoLogin'];
-//     let header = new Promise((resolve, reject) => {
-//         $("#header").load("html/header.html", function () {
-//             resolve()
-//         });
-//     })
-//     $("#footer").load("html/footer.html");
-//     let pf_right = new Promise((resolve, reject) => {
-//         $("#pf_right").load("html/pf_right.html", function () {
-//             resolve()
-//         });
-//     })
-//     // 转跳
-//     header.then(redirects)
-//     //加载完头部后 判断
-//     function redirects() {
-//         isLogin()
-//     }
-//     //右侧漂浮
-//     pf_right.then(aaa)
+jQuery(function ($) {
+    let $wide_banner = $(".wide_banner");
+    let $navigation = $('.slideshortcut a');
+    console.log($navigation)
+    //hover大轮播图 箭头出现
+    $wide_banner.hover(function () {
+        $navigation.show();
+    }, function () {
+        $navigation.hide();
+    })
+    //hover箭头 
+    $navigation.hover(function () {
+        $navigation.css('opacity', 1);
+    }, function () {
+        $navigation.css('opacity', 0.6);
+    })
+    bigBanner()
+    //大轮播图轮播
+    function bigBanner() {
+        let $wide_banner_bg = $(".wide_banner_bg");
+        let $imglist = $('.slidebox li');
+        let colorArr = ['#C83841', '#FFFDF1', '#FAF9FF', '#6E5366', '#F05A4B', '#D6E8FE'];
+        let $page = $('.light span');
+        $wide_banner_bg.css('background-color', colorArr[0]);
+        $imglist.css('left', 0);
+        $imglist.hide();
+        $imglist.eq(0).show();
+        //2.开定时器：每次轮播一个图
+        var now = 0; //当前可视区的li下标
+        var timer = null;
+        timer = setInterval(next, 5000); //每隔两秒切下一张
+        function next() {
+            //旧图挪走：左侧
+            $imglist.eq(now).fadeOut(300);
+            //新图
+            now = ++now > $imglist.length - 1 ? 0 : now;
+            $wide_banner_bg.css('background-color', colorArr[now]);
+            $imglist.eq(now).fadeIn(300);
+            light();
+        }
 
-//     function aaa() {
-//         let $pf_right_4 = $('.pf_right_4');
-//         let $pf_right_3 = $('.pf_right_3');
-//         let $pf_ygs = $('.pf_ygs');
-//         let $pf_weixin = $('.pf_weixin');
-//         $pf_right_4.hover(function () {
-//             $pf_weixin.css('display', 'block');
-//         }, function () {
-//             $pf_weixin.css('display', 'none');
-//         })
-//         $pf_right_3.hover(function () {
-//             $pf_ygs.css('display', 'block');
-//         }, function () {
-//             $pf_ygs.css('display', 'none');
-//         })
-//         let $pf_right_6 = $('.pf_right_6');
-//         $pf_right_6.on('click', function () {
-//             $('html,body').animate({
-//                 scrollTop: ($($(this).attr('href')).offset().top - 50)
-//             }, 1000);
-//         })
-//     }
-
-//     //进入页面前先判断是否为登录状态
-//     function isLogin() {
-//         if (autoLogin == 'yes') {
-//             let token = localStorage['token'];
-//             getUserMessage(token);
-//         } else if (autoLogin == 'no') {
-//             let token = sessionStorage['token'];
-//             getUserMessage(token);
-//         }
-//     }
-
-//     //获取用户信息
-//     function getUserMessage(token) {
-//         $.ajax({
-//             type: 'GET',
-//             dataType: 'json',
-//             url: '../api/getUserMessage.php',
-//             data: {
-//                 'token': token
-//             },
-//             success(res) {
-//                 if (!res.code) {
-//                     loginMessage(res)
-//                 }
-//             }
-//         })
-//     }
-//     //信息请求成功
-//     function loginMessage(res) {
-//         let $userMessage = $('#userTooleBarMemberStatus div');
-//         let $exit = $(".exit");
-//         $userMessage.eq(0).hide().siblings().show().find('span').html(res.content.uname)
-//         //点击退出
-//         $exit.click(function () {
-//             $userMessage.eq(1).hide().siblings().show();
-//             if (autoLogin == 'yes') {
-//                 localStorage['token'] = '';
-//             } else if (autoLogin == 'no') {
-//                 sessionStorage['token'] = '';
-//             }
-//         })
-//     }
-
-// })
+        function prev() {
+            //旧图挪走：左侧
+            $imglist.eq(now).fadeOut(300);
+            //新图
+            now = --now < 0 ? $imglist.length - 1 : now;
+            $wide_banner_bg.css('background-color', colorArr[now]);
+            $imglist.eq(now).fadeIn(300);
+            light();
+        }
+        //3.焦点跟随
+        function light() {
+            $page.eq(now).addClass('cur').siblings().removeClass('cur');
+        }
+        //4.点击上下按钮可以切图
+        //鼠标经过停止
+        $wide_banner.hover(function () {
+            clearInterval(timer);
+        }, function () {
+            timer = setInterval(next, 5000);
+        });
+        $wide_banner.on('click', '.prev', function () {
+            //切换到上一张
+            prev();
+        });
+        $wide_banner.on('click', '.next', function () {
+            //切换到下一张
+            next();
+        });
+        //5.点击焦点可以跳转
+        $wide_banner.on('mouseover', '.light span', function () {
+            var index = $(this).index();
+            if (index > now) {
+                //从右侧进入可视区
+                //旧图：放到左边
+                $imglist.eq(now).fadeOut(300);
+                //新图：快速放在右侧，再挪进来
+                $imglist.eq(index).fadeIn(300);
+                now = index;
+            }
+            if (index < now) {
+                //从左侧进入可视区
+                //旧图：放到右边
+                $imglist.eq(now).fadeOut(300);
+                //新图：快速放在左侧，再挪进来
+                $imglist.eq(index).fadeIn(300);
+                now = index;
+            }
+            light();
+        });
+    }
+})
