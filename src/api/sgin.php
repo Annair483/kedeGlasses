@@ -1,6 +1,6 @@
 <?php
-    $uname = isset($_GET['uname'])?$_GET['uname']:null;
-    $upw = isset($_GET['upw'])?$_GET['upw']:null;
+    $uname = isset($_POST['uname'])?$_POST['uname']:null;
+    $upw = isset($_POST['upw'])?$_POST['upw']:null;
     header("content-type:text/html;charset=utf-8");
 	include 'connect.php';
     $res = $conn -> query('select uid from sign where uname="'.$uname.'" and upw="'.$upw.'"');
