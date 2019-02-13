@@ -44,9 +44,8 @@
                 text-align: center;
             }
         }
-        &:hover{
 
-        }
+        &:hover {}
     }
 
     .wide_banner_right {
@@ -82,7 +81,33 @@
         position: absolute;
 
         li {
+            position: absolute;
+            // left: 0;
+            top: 0;
+            width: 710px;
+            height: 243px;
+            // font-size: 40px;
             float: left;
+        }
+    }
+
+    .infcp_baniu {
+        bottom: 12px;
+
+        li {
+            position: static;
+            float: left;
+            display: block;
+            width: 40px;
+            height: 5px;
+            background: #666;
+            margin-right: 2px;
+            cursor: pointer;
+            overflow: hidden;
+
+            &.changebg {
+                background: #90C221;
+            }
         }
     }
 }
@@ -136,12 +161,13 @@
             color: #fff;
             line-height: 18px;
             font-weight: normal;
+
             &.cur {
                 background: #94c51b;
             }
         }
     }
-    
+
 }
 
 //分类
@@ -433,6 +459,7 @@
             height: 243px;
             overflow: hidden;
             margin-right: 6px;
+
         }
 
         .wide_5f_img {
@@ -501,6 +528,20 @@
     }
 
     /*2F*/
+    .infcp_f_cont {
+        width: 490px;
+        height: 238px;
+        .infcptop {
+            li {
+                width: 490px;
+                height: 238px;
+            }
+        }
+        .infcp_baniu{
+            left: 203px;
+        }
+    }
+
     .wide_f_tit1 {
         border-bottom: 3px solid #72b7fc;
 
@@ -684,31 +725,39 @@
     }
 }
 
-.infcp_f_left {
-    width: 210px;
-    height: 360px;
-    overflow: hidden;
-}
+
 
 .infcp_4f_ban {
     width: 710px;
     height: 243px;
     overflow: hidden;
-}
 
-.wide_infcp {
-    position: relative;
-
-    .infcptop {
-        width: 10000px;
-    }
-
-    ul {
-        position: absolute;
+    .infcp_baniu {
+        left: 313px;
     }
 }
+
+
 
 /*2F楼层开始*/
+// 轮播
+.infcp_f_left {
+    width: 210px;
+    height: 360px;
+    overflow: hidden;
+
+    .infcptop {
+        li {
+            width: 210px;
+            height: 360px;
+        }
+    }
+
+    .infcp_baniu {
+        left: 63px;
+    }
+}
+
 .wide_f_hot_level {
     width: 108px;
     height: 15px;

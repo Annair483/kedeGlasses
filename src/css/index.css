@@ -72,7 +72,31 @@
 }
 
 .wide_infcp ul li {
+  position: absolute;
+  top: 0;
+  width: 710px;
+  height: 243px;
   float: left;
+}
+
+.wide_infcp .infcp_baniu {
+  bottom: 12px;
+}
+
+.wide_infcp .infcp_baniu li {
+  position: static;
+  float: left;
+  display: block;
+  width: 40px;
+  height: 5px;
+  background: #666;
+  margin-right: 2px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.wide_infcp .infcp_baniu li.changebg {
+  background: #90C221;
 }
 
 .prev,
@@ -479,6 +503,20 @@
   top: 190px;
 }
 
+.wide_f_main .infcp_f_cont {
+  width: 490px;
+  height: 238px;
+}
+
+.wide_f_main .infcp_f_cont .infcptop li {
+  width: 490px;
+  height: 238px;
+}
+
+.wide_f_main .infcp_f_cont .infcp_baniu {
+  left: 203px;
+}
+
 .wide_f_main .wide_f_tit1 {
   border-bottom: 3px solid #72b7fc;
 }
@@ -660,31 +698,32 @@
   top: 210px;
 }
 
-.infcp_f_left {
-  width: 210px;
-  height: 360px;
-  overflow: hidden;
-}
-
 .infcp_4f_ban {
   width: 710px;
   height: 243px;
   overflow: hidden;
 }
 
-.wide_infcp {
-  position: relative;
-}
-
-.wide_infcp .infcptop {
-  width: 10000px;
-}
-
-.wide_infcp ul {
-  position: absolute;
+.infcp_4f_ban .infcp_baniu {
+  left: 313px;
 }
 
 /*2F楼层开始*/
+.infcp_f_left {
+  width: 210px;
+  height: 360px;
+  overflow: hidden;
+}
+
+.infcp_f_left .infcptop li {
+  width: 210px;
+  height: 360px;
+}
+
+.infcp_f_left .infcp_baniu {
+  left: 63px;
+}
+
 .wide_f_hot_level {
   width: 108px;
   height: 15px;

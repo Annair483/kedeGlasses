@@ -1,5 +1,4 @@
 jQuery(function ($) {
-    console.log(111)
     let autoLogin = localStorage['autoLogin'];
     let header = new Promise((resolve, reject) => {
         $("#header").load("html/header.html", function () {
