@@ -843,8 +843,16 @@
   background: url(../css/images/left_bg_all.png);
 }
 
-.index_shop .left li.info {
+.index_shop .left li.info_on {
   background-position: 0px top;
+}
+
+.index_shop .left li.info {
+  background-position: 0px -273px;
+}
+
+.index_shop .left li.map_on {
+  background-position: 0px bottom;
 }
 
 .index_shop .left li.map {

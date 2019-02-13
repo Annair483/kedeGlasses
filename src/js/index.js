@@ -243,7 +243,6 @@ jQuery(function ($) {
         let $img = $('.wide_4f_li_img img');
         let $wide_4f_li_name = $('.wide_4f_li_name');
         let $wide_4f_li_price = $('.wide_4f_li_price');
-        console.log(res)
         $.each(res,function(idx,item){
             $img.eq(idx).attr('src',item.url);
             $wide_4f_li_name.eq(idx).html(item.godsName);
@@ -265,7 +264,34 @@ jQuery(function ($) {
             $wide_f_hot_name.eq(idx).html(item.godsName);
             $wide_f_item_price.eq(idx).html(`￥${item.price}`)
             $wide_f_hot_price.eq(idx).html(`￥${parseInt(item.price)}<span>￥${parseInt(item.marketPrice)}</span>`)
+        })
+    }
+    //门店楼层tab切换
+    let $right = $('.right>li');
+    let $tit =$('.tit>li');
+    let $left = $('.left>li');
+    shop()
+    function shop(){
+        let $tab = $(".tab li");
+        $tab.mouseover(function(){
+            let i = $(this).index();
+            $(this).addClass('on').siblings().removeClass('on');
+            $right.eq(i*2).show().addClass('ass').siblings().hide().removeClass('ass');
+            $tit.eq(i).show().siblings().hide();
+            leftTab(i)
+        })
+    }
+    let i = 1
+    leftTab()
+    function leftTab(i){
 
+        $left.eq(0).mouseover(function(){
+            $(this).attr('class','info_on').next().attr('class','map')
+            $right.filter('.ass').show().siblings().hide();
+        })
+        $left.eq(1).mouseover(function(){
+            $(this).attr('class','map_on').prev().attr('class','info')
+            $right.filter('.ass').next().show().siblings().hide();
         })
     }
 })

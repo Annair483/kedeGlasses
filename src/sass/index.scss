@@ -876,12 +876,16 @@
             cursor: default;
             background: url(../css/images/left_bg_all.png);
 
-            &.info {
+            &.info_on{
                 background-position: 0px top;
-
             }
-
-            &.map {
+            &.info{
+                background-position: 0px -273px;
+            }
+            &.map_on{
+                background-position: 0px bottom;
+            }
+            &.map{
                 background-position: 0px -136px;
             }
         }
