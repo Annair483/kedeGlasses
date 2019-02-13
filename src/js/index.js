@@ -1,6 +1,9 @@
 jQuery(function ($) {
     let $wide_banner = $(".wide_banner");
     let $navigation = $('.slideshortcut a');
+    let $hp_menu =  $(".hp_menu");
+    let $ul1 = $hp_menu.eq(0).find('ul');
+    let $ul2 = $hp_menu.eq(1).find('ul');
     //hover大轮播图 箭头出现
     $wide_banner.hover(function () {
         $navigation.show();
@@ -97,7 +100,6 @@ jQuery(function ($) {
         let $box = $(ele);
         let $li = $box.find('.infcptop>li');
         let $pageLi = $(ele).find('.infcp_baniu li');
-        console.log($pageLi)
         //1.把所有的图片放在右侧，第一个图片放到可视区
         var iW = $li.eq(0).outerWidth();
         $li.css('left', iW);
@@ -111,14 +113,14 @@ jQuery(function ($) {
 
         function next() {
             //旧图挪走：左侧
-            $li.eq(now).animate({
+            $li.eq(now).stop(true).animate({
                 'left': -iW
             }, 800, 'linear');
 
             //新图
             now = ++now > $li.length - 1 ? 0 : now;
             $li.eq(now).css('left', iW);
-            $li.eq(now).animate({
+            $li.eq(now).stop(true).animate({
                 'left': 0
             }, 800, 'linear');
             light();
@@ -184,5 +186,86 @@ jQuery(function ($) {
 
             light();
         });
+    }
+    //商品渲染
+    getGodsMessage()
+
+    function getGodsMessage() {
+        $.ajax({
+            url: 'api/indexGods.php',
+            dataType: 'json',
+            success(res) {
+                mz(res[0]);
+                oneFGods(res[1]);
+                twoFGods(res[2]);
+            }
+        })
+    }
+    //渲染秒杀和值得买
+    function mz(res) {
+        for (let i = 0; i < 5; i++) {
+            let html = ` <li class="hp_mj">
+                            <a href="#" target="_blank">
+                                <img src="${res[i].url}" alt="${res[i].godsName}">
+                                <p>${res[i].godsName}<br><span><b>￥</b>${res[i].price}</span></p>
+                            </a>
+                        </li>`
+            $ul1.append(html)
+        }
+        for (let i = 5; i < 10; i++) {
+            let html = ` <li class="hp_mj">
+                            <a href="#" target="_blank">
+                                <img src="${res[i].url}" alt="${res[i].godsName}">
+                                <p>${res[i].godsName}<br><span><b>￥</b>${res[i].price}</span></p>
+                            </a>
+                        </li>`
+            $ul2.append(html)
+        }
+        tabMz()
+    }
+    //秒杀和值得买选项卡
+    function tabMz(){
+        let $zw = $('.zw a');
+        let $dsfw  = $(".dsfw a");
+        $zw.mouseover(function(){
+            $(this).css('background-position','0px 0px')
+             $dsfw.css('background-position','0px -91px')
+             $hp_menu.eq(0).show().siblings().hide();
+        })
+        $dsfw.mouseover(function(){
+            $(this).css('background-position','0px -273px')
+            $zw.css('background-position','0px -182px')
+            $hp_menu.eq(1).show().siblings().hide();
+        })
+    }
+    //1F渲染
+    function oneFGods(res){
+        let $img = $('.wide_4f_li_img img');
+        let $wide_4f_li_name = $('.wide_4f_li_name');
+        let $wide_4f_li_price = $('.wide_4f_li_price');
+        console.log(res)
+        $.each(res,function(idx,item){
+            $img.eq(idx).attr('src',item.url);
+            $wide_4f_li_name.eq(idx).html(item.godsName);
+            $wide_4f_li_price.eq(idx).html(`￥${item.price}`)
+        })
+    }
+    //2F渲染
+    function twoFGods(res){
+        let $hotImg = $('.wide_f_hot_img img');
+        let $wide_f_hot_name = $('.wide_f_hot_name');
+        let $wide_f_hot_price = $('.wide_f_hot_price');
+        let $img = $('.wide_f_item_img');
+        let $wide_f_item_name = $('.wide_f_item_name');
+        let $wide_f_item_price = $('.wide_f_item_price');
+        $.each(res,function(idx,item){
+            $img.eq(idx).attr('src',item.url).attr('alt',item.godsName);
+            $hotImg.eq(idx).attr('src',item.url).attr('alt',item.godsName);
+            $wide_f_item_name.eq(idx).html(item.godsName);
+            $wide_f_hot_name.eq(idx).html(item.godsName);
+            $wide_f_item_price.eq(idx).html(`￥${item.price}`)
+            $wide_f_hot_price.eq(idx).html(`￥${parseInt(item.price)}<span>￥${parseInt(item.marketPrice)}</span>`)
+
+        })
     }
 })

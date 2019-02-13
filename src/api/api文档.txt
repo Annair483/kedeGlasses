@@ -40,7 +40,8 @@ getUserMessage.php    获取用户信息
 
 
 goodsDetails.php    详情页获取单个商品信息
-传 gid:商品ID
+传 gid:商品ID 
+   fromName: 表名
 返回  {该商品的所有信息}
 
 已验证可用
