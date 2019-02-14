@@ -41,6 +41,14 @@ jQuery(function ($) {
                 scrollTop: ($($(this).attr('href')).offset().top - 50)
             }, 1000);
         })
+        $(window).scroll(function(){
+            var i = $(this).scrollTop()
+            if(i>313){
+                $pf_right_6.fadeIn(1000);
+            }else{
+                $pf_right_6.fadeOut(1000);
+            }
+        })
     }
 
     //进入页面前先判断是否为登录状态
