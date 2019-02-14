@@ -3,7 +3,10 @@ jQuery(function ($) {
     let $page = $('#page');
     let $classify_form = $('.classify_form s');
     let $classify_product_page_len = $('.classify_product_page_len');
-    godsRequest()
+    let showXl = true;
+    let showJg = true;
+    let $classify_product_sort = $('.classify_product_sort');
+    godsRequest();
     //请求商品数据，默认排序
     function godsRequest(obj) {
         var defaults = {
@@ -17,9 +20,12 @@ jQuery(function ($) {
             url: '../api/goodsList.php',
             data,
             success(res) {
-                console.log(res)
-                produst(res.data)
-                page(res)
+                //清空商品 和分页
+                $classify_product_ul.html('');
+                $page.html('');
+                produst(res.data);
+                page(res);
+                tabPage()
             }
         })
     }
@@ -68,11 +74,129 @@ jQuery(function ($) {
         //右上角小页数
         $classify_product_page_len.html(`<s>${res.currentPage}</s>/${totalPage}`)
     }
+    //切换分页
+    //给点击了排序的按钮加一个类名
+    //切换分页的时候根据按钮是否有类名，在排序
+    function tabPage() {
+        let $pageLi = $page.find('li');
+        $pageLi.click(function () {
+            $(this).addClass('classify_active').siblings().removeClass('classify_active');
+            //获取当前页数
+            let currentPage = $('#page li').filter('.classify_active').html();
+            console.log(currentPage)
+            switch (true) {
+                case $classify_product_sort.filter('.on').attr('id') == 'sort_xl':
+                    showXl = true;
+                    xlSort(this, currentPage);
+                    break;
+                case $classify_product_sort.filter('.on').attr('id') == 'sort_jg':
+                    showJg = true;
+                    jgSort(this, currentPage)
+                    break;
+                case $classify_product_sort.filter('.on_l').attr('id') == 'sort_xl':
+                    showXl = false;
+                    xlSort(this, currentPage);
+                    break;
+                case $classify_product_sort.filter('.on_l').attr('id') == 'sort_jg':
+                    showJg = false;
+                    jgSort(this, currentPage)
+                    break;
+                default:
+                    zhSort(this, currentPage)
+            }
+        })
+        //上下页按钮切换切换
+        let $prev = $(".classify_prev,.classify_product_page_prev");
+        let $next = $(".classify_next,.classify_product_page_next")
+    }
+
     //商品排序
-    // sort()
-    // function sort(){
-    //     let showJg = true;
-    //     let showXl = true;
-    //     let 
-    // }
+    sort()
+
+    function sort() {
+        //排序按钮绑定点击事件
+        $classify_product_sort.click(function () {
+            //获取当前页数
+            let currentPage = $('#page li').filter('.classify_active').html();
+            //获取按钮下标
+            let i = $(this).index();
+            if (i == 0) {
+                zhSort(this, currentPage);
+            } else if (i == 1) {
+                xlSort(this, currentPage);
+            } else if (i == 2) {
+                jgSort(this, currentPage);
+            }
+        })
+    }
+    //综合排序
+    function zhSort(ele, currentPage) {
+        //创建公共参数
+        let obj = {
+            'qty': 60,
+            currentPage,
+        };
+        $(ele).siblings('a').find('i').css('background-position', '0px -917px');
+        godsRequest(obj);
+    }
+    //销量排序
+    function xlSort(ele, currentPage) {
+        //创建公共参数
+        let obj = {
+            'qty': 60,
+            currentPage,
+        };
+        let obj2;
+        //根据按钮的true、false判断升降序
+        if (showXl) {
+            obj2 = {
+                'fieldName': 'sell',
+                'sort': 'desc'
+            }
+            $(ele).find('i').css('background-position', '0px -917px');
+            $(ele).siblings('a').find('i').css('background-position', '0px -917px');
+            $(ele).addClass('on').removeClass('on_l').siblings().removeClass('on on_l');
+        } else {
+            obj2 = {
+                'fieldName': 'sell'
+            }
+            $(ele).find('i').css('background-position', '-230px -917px');
+            $(ele).siblings('a').find('i').css('background-position', '0px -917px');
+            $(ele).addClass('on_l').removeClass('on').siblings().removeClass('on_l on');
+
+        }
+        //合并对象在传参
+        obj = Object.assign({}, obj2, obj);
+        godsRequest(obj);
+        //取反
+        showXl = !showXl;
+    }
+    //价格排序
+    function jgSort(ele, currentPage) {
+        //创建公共参数
+        let obj = {
+            'qty': 60,
+            currentPage,
+        };
+        let obj2;
+        if (showJg) {
+            obj2 = {
+                'fieldName': 'price',
+                'sort': 'desc'
+            }
+            $(ele).find('i').css('background-position', '0px -917px');
+            $(ele).siblings('a').find('i').css('background-position', '0px -917px');
+            $(ele).addClass('on').removeClass('on_l').siblings().removeClass('on on_l');
+        } else {
+            obj2 = {
+                'fieldName': 'price'
+            }
+            $(ele).find('i').css('background-position', '-230px -917px');
+            $(ele).siblings('a').find('i').css('background-position', '0px -917px');
+            $(ele).addClass('on_l').removeClass('on').siblings().removeClass('on_l on');
+        }
+        obj = Object.assign({}, obj2, obj);
+        godsRequest(obj);
+        showJg = !showJg;
+    }
 })
