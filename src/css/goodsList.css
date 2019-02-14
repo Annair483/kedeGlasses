@@ -134,6 +134,17 @@
   z-index: 1;
 }
 
+.classify_product .classify_product_ul li:hover {
+  height: 382px;
+  border-width: 2px;
+  margin: 19px 19px -35px 3px;
+  z-index: 10;
+}
+
+.classify_product .classify_product_ul li:hover .classify_btn {
+  display: block;
+}
+
 .classify_product .classify_product_ul li .classify_btn {
   width: 100%;
   position: absolute;

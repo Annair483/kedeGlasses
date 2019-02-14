@@ -1,13 +1,13 @@
 jQuery(function ($) {
     let autoLogin = localStorage['autoLogin'];
     let header = new Promise((resolve, reject) => {
-        $("#header").load("html/header.html", function () {
+        $("#header").load("../html/header.html", function () {
             resolve()
         });
     })
-    $("#footer").load("html/footer.html");
+    $("#footer").load("../html/footer.html");
     let pf_right = new Promise((resolve, reject) => {
-        $("#pf_right").load("html/pf_right.html", function () {
+        $("#pf_right").load("../html/pf_right.html", function () {
             resolve()
         });
     })

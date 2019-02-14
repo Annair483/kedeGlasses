@@ -131,6 +131,18 @@
       position: relative;
       z-index: 1;
 
+      &:hover {
+        height: 382px;
+        border-width: 2px;
+        margin: 19px 19px -35px 3px;
+        z-index: 10;
+
+        .classify_btn {
+          display: block;
+
+        }
+      }
+
       .classify_btn {
         width: 100%;
         position: absolute;
