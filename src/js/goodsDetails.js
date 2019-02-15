@@ -1,34 +1,86 @@
-// jQuery(function ($) {
-//     let pf_right =  new Promise((resolve, reject) => {
-//          $("#pf_right").load("pf_right.html",function(){
-//              resolve()
-//          });
-//      })
-//      $("#header").load("header.html");
-//      $("#footer").load("footer.html");
-//      //右侧漂浮
-//      pf_right.then(aaa)
-//      function aaa(){
-//          let $pf_right_4 = $('.pf_right_4');
-//          let $pf_right_3 = $('.pf_right_3');
-//          let $pf_ygs = $('.pf_ygs');
-//          let $pf_weixin = $('.pf_weixin');
-//          $pf_right_4.hover(function () {
-//              $pf_weixin.css('display', 'block');
-//          }, function () {
-//              $pf_weixin.css('display', 'none');
-//          })
-//          $pf_right_3.hover(function () {
-//              $pf_ygs.css('display', 'block');
-//          }, function () {
-//              $pf_ygs.css('display', 'none');
-//          })
-//          let $pf_right_6 = $('.pf_right_6');
-//          $pf_right_6.on('click', function () {
-//              $('html,body').animate({
-//                  scrollTop: ($($(this).attr('href')).offset().top - 50)
-//              }, 1000);
-//          })
-//      }
-    
-//  })
+jQuery(function ($) {
+    var obj = {};
+    var MessageArr = location.search.slice(1).split('&');
+    $.each(MessageArr, function (idx, item) {
+        var arr = item.split('=');
+        obj[arr[0]] = arr[1]
+    })
+    var {
+        gid
+    } = obj;
+    var {
+        fromName
+    } = obj;
+    let $bigImg = $('.jqzoom');
+    let $slistLi = $(".slist li")
+    let $smallImg = $slistLi.find('img');
+    //ajax请求
+    godsRequest()
+
+    function godsRequest() {
+        $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: '../api/goodsDetails.php',
+            data: {
+                gid,
+                fromName
+            },
+            success(res) {
+                console.log(res)
+                godsShow(res)
+                changeImg()
+                zoom()
+            }
+        })
+    }
+    //渲染数据
+    function godsShow(res) {
+        let $godsName = $(".details_top_name span");
+        let $pic = $(".message_price");
+        let $markPic = $(".message_price_kd b");
+        let $number = $(".message_price_save");
+
+        $godsName.html(res.godsName);
+        $pic.html(`￥${res.price}`);
+        $markPic.html(`￥${res.marketPrice}`);
+        $number.eq(0).html(`${res.number}积分`);
+        $number.eq(1).html(res.integral);
+
+        $bigImg.attr({
+            'src': `../${res.bigUrl1}`,
+            'data-big': `../${res.bigUrl1}`
+        })
+        $.each($smallImg, function (idx, item) {
+            let i = idx + 1;
+            $(item).attr({
+                'src': `../${res[`bigUrl${i}`]}`,
+                'data-big': `../${res[`bigUrl${i}`]}`
+            })
+        })
+    }
+    //tab切换smallImg到bigIMg
+    function changeImg() {
+        $slistLi.on('mouseenter', function () {
+            let thiser = $(this);
+            let img = thiser.find('img');
+            console.log(img)
+            thiser.addClass('hover').siblings().removeClass('hover');
+            $bigImg.attr({
+                'src': img.attr('src'),
+                'data-big': img.attr('data-big')
+            });
+            return false;
+        })
+
+    }
+    //放大镜插件
+    function zoom() {
+        $('.details_top_img').lxzoom({
+            'width': 400,
+            'height': 400,
+            'gap':10
+        });
+    }
+
+})

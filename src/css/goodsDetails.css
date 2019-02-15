@@ -60,7 +60,7 @@
   display: block;
 }
 
-.details_top .details_top_img_s .slist ul li:hover {
+.details_top .details_top_img_s .slist ul li.hover {
   padding: 0px;
   border: 2px solid #93c525;
 }

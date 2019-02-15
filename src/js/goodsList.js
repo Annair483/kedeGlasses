@@ -37,7 +37,7 @@ jQuery(function ($) {
     //产品渲染
     function produst(res) {
         $.each(res, function (idx, item) {
-            let html = `<li data-gid="${item.gid}">
+            let html = `<li data-gid="${item.gid}" data-fromName="goodslist">
                             <a href="#" target="_blank">
                                 <img alt="${item.godsName}" src="../${item.url}"></a>
                             <p class="classify_price">
@@ -220,7 +220,8 @@ jQuery(function ($) {
     function locations(res) {
         $classify_product_ul.on('click', 'li', function () {
             var $gid = $(this).attr('data-gid');
-            location.href = `goodsDetails.html?id=${$gid}`;
+            var $formName = $(this).attr('data-fromName')
+            location.href = `goodsDetails.html?gid=${$gid}&fromName=${$formName}`;
             return false;
         })
     }
