@@ -29,7 +29,8 @@ jQuery(function ($) {
                 currentPage = res.currentPage;
                 produst(res.data);
                 page(res);
-                tabPage(res)
+                tabPage(res);
+                locations(res)
             }
         })
     }
@@ -90,7 +91,7 @@ jQuery(function ($) {
         })
     }
     //判断是否升降序
-    function judgeSort(){
+    function judgeSort() {
         switch (true) {
             case $classify_product_sort.filter('.on').attr('id') == 'sort_xl':
                 showXl = true;
@@ -114,6 +115,7 @@ jQuery(function ($) {
     }
     //上下页按钮切换切换
     PrevNext()
+
     function PrevNext() {
         let $prev = $(".classify_prev,.classify_product_page_prev");
         let $next = $(".classify_next,.classify_product_page_next");
@@ -130,9 +132,23 @@ jQuery(function ($) {
             }
         })
     }
+    //确认按钮转跳分页
+    skipPage();
 
+    function skipPage() {
+        let $classify_pager_btn = $(".classify_pager_btn");
+        let $classify_input = $(".classify_input");
+        $classify_pager_btn.click(function () {
+            let _classify_input = $classify_input.val().trim() * 1;
+            if (Number.isInteger(_classify_input) && _classify_input >= 1 && _classify_input <= totalPage) {
+                currentPage = _classify_input;
+                judgeSort();
+            }
+        })
+    }
     //商品排序
     godsSort()
+
     function godsSort() {
         //排序按钮绑定点击事件
         $classify_product_sort.click(function () {
@@ -198,5 +214,14 @@ jQuery(function ($) {
         }
         godsRequest(obj);
         showJg = !showJg;
+    }
+    
+    //点击商品传参id到详情页
+    function locations(res) {
+        $classify_product_ul.on('click', 'li', function () {
+            var $gid = $(this).attr('data-gid');
+            location.href = `goodsDetails.html?id=${$gid}`;
+            return false;
+        })
     }
 })
