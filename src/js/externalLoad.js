@@ -30,13 +30,13 @@ jQuery(function ($) {
             success(res) {
                 if (!res.code) {
                     loginMessage(res)
+                    setUid(res.content)
                 }
             }
         })
     }
     //信息请求成功
     function loginMessage(res) {
-        console.log(res)
         let $userMessage = $('#userTooleBarMemberStatus div');
         let $exit = $(".exit");
         $userMessage.eq(0).hide().siblings().show().find('span').html(res.content.uname)
@@ -45,11 +45,22 @@ jQuery(function ($) {
             $userMessage.eq(1).hide().siblings().show();
             if (autoLogin == 'yes') {
                 localStorage['token'] = '';
+                Cookie.delCookie('uid', '/')
 
             } else if (autoLogin == 'no') {
                 sessionStorage['token'] = '';
+                Cookie.delCookie('uid', '/')
             }
         })
+    }
+    //存uid到cookie
+    function setUid(res) {
+        let d = new Date("2117-01-01");
+        if (autoLogin == 'yes') {
+            Cookie.setCookie('uid', res.uid, d, '/')
+        } else if (autoLogin == 'no') {
+            Cookie.setCookie('uid', res.uid, '', '/')
+        }
     }
     //右侧漂浮
     function aaa() {
@@ -99,6 +110,52 @@ jQuery(function ($) {
             if (!$(this).hasClass('noChild')) {
                 $(this).find('.classify_tree3').stop().slideToggle(300)
             }
+        })
+    }
+
+    function getUid() {
+        //获取uid
+        var uid = Cookie.getCookie('uid')
+        // 判断是否登录
+
+        if (uid) {
+            addGodsAjax('', godsTotalQty);
+            addGodsBtn()
+        } else {
+            let $godsTotalQty = $('#RightContactFloatContainerCartQuantity,#menu_tab_cart');
+            $godsTotalQty.html(0);
+        }
+    }
+
+    //ajax的cb 用户商品总件数
+    function godsTotalQty(res) {
+        let $godsTotalQty = $('#RightContactFloatContainerCartQuantity,#menu_tab_cart');
+        let html = 0;
+        $.each(res, function (idx, item) {
+            html += item.qty * 1
+        })
+        $godsTotalQty.html(html);
+        // $godsTotalQty.click(function(){
+        //     location.href = ''
+        // })
+    }
+    //获取用户购物车商品信息ajax
+    function addGodsAjax(obj, cb) {
+        var defaults = {
+            uid
+        }
+        var data = Object.assign({}, defaults, obj);
+        console.log(obj)
+        $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: '../api/shoppingCart.php',
+            data,
+            success(res) {
+                console.log(res)
+                cb(res)
+            }
+
         })
     }
 })

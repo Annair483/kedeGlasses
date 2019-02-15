@@ -9,6 +9,7 @@ jQuery(function ($) {
     var currentPage = 1;
     var qty = 60;
     var totalPage;
+    
     godsRequest();
     //请求商品数据，默认排序
     function godsRequest(obj) {

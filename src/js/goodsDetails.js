@@ -11,10 +11,16 @@ jQuery(function ($) {
     var {
         fromName
     } = obj;
+ 
+
+
+
+
     let $bigImg = $('.jqzoom');
     let $slistLi = $(".slist li")
     let $smallImg = $slistLi.find('img');
-    //ajax请求
+
+    //获取商品信息ajax请求
     godsRequest()
 
     function godsRequest() {
@@ -27,10 +33,11 @@ jQuery(function ($) {
                 fromName
             },
             success(res) {
-                console.log(res)
+                // console.log(res)
                 godsShow(res)
                 changeImg()
                 zoom()
+
             }
         })
     }
@@ -64,7 +71,6 @@ jQuery(function ($) {
         $slistLi.on('mouseenter', function () {
             let thiser = $(this);
             let img = thiser.find('img');
-            console.log(img)
             thiser.addClass('hover').siblings().removeClass('hover');
             $bigImg.attr({
                 'src': img.attr('src'),
@@ -79,8 +85,28 @@ jQuery(function ($) {
         $('.details_top_img').lxzoom({
             'width': 400,
             'height': 400,
-            'gap':10
+            'gap': 10
         });
+    }
+
+    //点击事件
+    function addGodsBtn() {
+        let $details_shoppingbtn = $('.details_shoppingbtn');
+        let $details_purchasebtn = $('.details_purchasebtn');
+        //加入购物侧
+        $details_shoppingbtn.click(function () {
+            addGodsAjax({
+                'qty': 1
+            }, godsTotalQty)
+        })
+        //立即购买
+        $details_purchasebtn.click(function () {
+            addGodsAjax({
+                'qty': 1
+            }, godsTotalQty)
+            // location.href = ''
+        })
+
     }
 
 })

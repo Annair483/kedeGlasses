@@ -4,6 +4,7 @@ jQuery(function ($) {
     let $hp_menu = $(".hp_menu");
     let $ul1 = $hp_menu.eq(0).find('ul');
     let $ul2 = $hp_menu.eq(1).find('ul');
+    
     //hover大轮播图 箭头出现
     $wide_banner.hover(function () {
         $navigation.show();
