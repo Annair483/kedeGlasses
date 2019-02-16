@@ -303,7 +303,7 @@ function addGodsBtn(gid) {
         addGodsAjax({
             'qty': 1,
             gid
-        }, godsTotalQty)
+        }, godsTotalQty) 
     })
     //立即购买
     $details_purchasebtn.click(function () {

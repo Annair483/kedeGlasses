@@ -30,6 +30,7 @@ jQuery(function ($) {
                 godsShow(res)
                 changeImg()
                 zoom()
+                fly(res)
             }
         })
     }
@@ -80,6 +81,30 @@ jQuery(function ($) {
             'gap': 10
         });
     }
+
     addGodsBtn(gid);
     godsRequest();
+    //飞入购物车
+
+    function fly(res) {
+        let $addcart = $('.details_shoppingbtn');
+        $addcart.on('click', function () {
+            var $flyDiv = $(`<img src="../${res.url}" width="32" height="32">`);
+            $flyDiv.css({
+                'position': 'absolute',
+                'left': $addcart.offset().left,
+                'top': $addcart.offset().top,
+                'z-index':'200'
+            })
+            $flyDiv.appendTo($addcart);
+            var $my_cart = $('.pf_right_5');
+            $flyDiv.animate({
+                'left': $my_cart.offset().left,
+                'top': $my_cart.offset().top
+            }, 500, function () {
+                $flyDiv.remove()
+            })
+            return false;
+        })
+    }
 })
