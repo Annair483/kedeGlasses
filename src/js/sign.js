@@ -58,7 +58,6 @@
                      'upw': _Password
                  },
                  success(res) {
-                     console.log(res)
                      successfulRequest(res, _UserName, _Password)
                  }
              })
@@ -84,7 +83,7 @@
                  sessionStorage['token'] = res.token;
                  localStorage['autoLogin'] = "no";
              }
-            //  localStorage['uid']=res.uid;
+             setUid(res)
          } else {
              $r_error.eq(0).html('账户或密码错误')
          }

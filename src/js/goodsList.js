@@ -9,7 +9,7 @@ jQuery(function ($) {
     var currentPage = 1;
     var qty = 60;
     var totalPage;
-    
+
     godsRequest();
     //请求商品数据，默认排序
     function godsRequest(obj) {
@@ -31,8 +31,32 @@ jQuery(function ($) {
                 produst(res.data);
                 page(res);
                 tabPage(res);
-                locations(res)
+                locations(res);
             }
+        })
+    }
+    //飞入购物车
+    // 传图片路径，和飞入按钮对象
+    function fly(ele) {
+        console.log(111)
+        let $addcart = $(ele);
+        $addcart.on('click', function () {
+            var $flyDiv = $(`<img src="../${$(this).attr('imgSrc')}" width="32" height="32">`);
+            $flyDiv.css({
+                'position': 'absolute',
+                'left': $addcart.offset().left,
+                'top': $addcart.offset().top,
+                'z-index': '200'
+            })
+            $flyDiv.appendTo($addcart);
+            var $my_cart = $('.pf_right_5');
+            $flyDiv.animate({
+                'left': $my_cart.offset().left,
+                'top': $my_cart.offset().top
+            }, 500, function () {
+                $flyDiv.remove()
+            })
+            return false;
         })
     }
     //产品渲染
@@ -40,7 +64,7 @@ jQuery(function ($) {
         $.each(res, function (idx, item) {
             let html = `<li data-gid="${item.gid}" data-fromName="goodslist">
                             <a href="#" target="_blank">
-                                <img alt="${item.godsName}" src="../${item.url}"></a>
+                                <img class="imgGods" alt="${item.godsName}" src="../${item.url}"></a>
                             <p class="classify_price">
                                 <span><label>￥</label>${item.price}</span>
                             </p>
@@ -57,12 +81,15 @@ jQuery(function ($) {
                             <p class="classify_corner">
                             </p>
                             <p class="classify_btn">
-                                <span><i class="classify_shopping"></i>加入购物车</span>
+                                <span imgSrc="../${item.url}" ><i class="classify_shopping"></i>加入购物车</span>
                                 <a><span><i class="classify_collect"></i>收藏</span><label><i class="classify_collect"></i>已收藏</label></a>
                             </p>
                         </li>`
             $classify_product_ul.append(html);
         })
+        console.log($('.classify_btn span'))
+        fly($('.classify_btn span'))
+
     }
     //分页渲染
     function page(res) {
@@ -216,7 +243,7 @@ jQuery(function ($) {
         godsRequest(obj);
         showJg = !showJg;
     }
-    
+
     //点击商品传参id到详情页
     function locations(res) {
         $classify_product_ul.on('click', 'li', function () {

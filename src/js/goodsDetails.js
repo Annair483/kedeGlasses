@@ -30,7 +30,7 @@ jQuery(function ($) {
                 godsShow(res)
                 changeImg()
                 zoom()
-                fly(res)
+                fly(res.url, '.details_shoppingbtn')
             }
         })
     }
@@ -85,16 +85,16 @@ jQuery(function ($) {
     addGodsBtn(gid);
     godsRequest();
     //飞入购物车
-
-    function fly(res) {
-        let $addcart = $('.details_shoppingbtn');
+    // 传图片路径，和飞入按钮对象
+    function fly(src, ele) {
+        let $addcart = $(ele);
         $addcart.on('click', function () {
-            var $flyDiv = $(`<img src="../${res.url}" width="32" height="32">`);
+            var $flyDiv = $(`<img src="../${src}" width="32" height="32">`);
             $flyDiv.css({
                 'position': 'absolute',
                 'left': $addcart.offset().left,
                 'top': $addcart.offset().top,
-                'z-index':'200'
+                'z-index': '200'
             })
             $flyDiv.appendTo($addcart);
             var $my_cart = $('.pf_right_5');

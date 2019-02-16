@@ -8,7 +8,6 @@ jQuery(function ($) {
         aaa();
         //头部加载
         $("#header").load("../html/header.html", function () {
-            // addGodsBtn()
             isLogin()
         });
 
@@ -19,10 +18,14 @@ jQuery(function ($) {
     function isLogin() {
         if (autoLogin == 'yes') {
             let token = localStorage['token'];
+            // 显示登录信息
             getUserMessage(token);
+            // 渲染总商品数
+            getUid()
         } else if (autoLogin == 'no') {
             let token = sessionStorage['token'];
             getUserMessage(token);
+            getUid()
         }
     }
     //获取用户信息
@@ -37,7 +40,7 @@ jQuery(function ($) {
             success(res) {
                 if (!res.code) {
                     loginMessage(res)
-                    setUid(res.content)
+                    // setUid(res.content)
                 }
             }
         })
@@ -60,17 +63,7 @@ jQuery(function ($) {
             }
         })
     }
-    //存uid到cookie
-    function setUid(res) {
-        let d = new Date("2117-01-01");
-        if (autoLogin == 'yes') {
-            Cookie.setCookie('uid', res.uid, d, '/')
-            getUid()
-        } else if (autoLogin == 'no') {
-            Cookie.setCookie('uid', res.uid, '', '/')
-            getUid()
-        }
-    }
+  
     //右侧漂浮
     function aaa() {
         let $pf_right_4 = $('.pf_right_4');

@@ -256,7 +256,7 @@ function linearAnimate(speed, ele, attr, target, time) {
 
 
 
-//获取uid
+//获取uid  有登录就渲染总件数，给加购物车点击事件
 function getUid(gid) {
     uid = Cookie.getCookie('uid')
     // 判断是否登录
@@ -281,7 +281,7 @@ function setUid(res) {
     }
 }
 
-//ajax的cb 用户商品总件数
+//ajax的cb 渲染用户商品总件数
 function godsTotalQty(res) {
     let $godsTotalQty = $('#RightContactFloatContainerCartQuantity,#menu_tab_cart');
     let html = 0;
@@ -303,7 +303,7 @@ function addGodsBtn(gid) {
         addGodsAjax({
             'qty': 1,
             gid
-        }, godsTotalQty) 
+        }, godsTotalQty)
     })
     //立即购买
     $details_purchasebtn.click(function () {
@@ -334,4 +334,15 @@ function addGodsAjax(obj, cb) {
 
     })
 }
-
+//存uid到cookie
+function setUid(res) {
+    let d = new Date("2117-01-01");
+    let autoLogin = localStorage['autoLogin'];
+    if (autoLogin == 'yes') {
+        Cookie.setCookie('uid', res.uid, d, '/')
+        getUid()
+    } else if (autoLogin == 'no') {
+        Cookie.setCookie('uid', res.uid, '', '/')
+        getUid()
+    }
+}
