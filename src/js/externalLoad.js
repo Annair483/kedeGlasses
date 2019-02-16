@@ -1,11 +1,18 @@
 jQuery(function ($) {
+    var uid;
     let autoLogin = localStorage['autoLogin'];
-    //头部加载
-    $("#header").load("../html/header.html", isLogin);
     // 底部加载
     $("#footer").load("../html/footer.html");
     //右侧漂浮加载
-    $("#pf_right").load("../html/pf_right.html", aaa);
+    $("#pf_right").load("../html/pf_right.html", function () {
+        aaa();
+        //头部加载
+        $("#header").load("../html/header.html", function () {
+            // addGodsBtn()
+            isLogin()
+        });
+
+    });
     // 左侧导航加载
     $(".classify_left").load("../html/leftNav.html", pullDownList);
     //进入页面前先判断是否为登录状态
@@ -58,8 +65,10 @@ jQuery(function ($) {
         let d = new Date("2117-01-01");
         if (autoLogin == 'yes') {
             Cookie.setCookie('uid', res.uid, d, '/')
+            getUid()
         } else if (autoLogin == 'no') {
             Cookie.setCookie('uid', res.uid, '', '/')
+            getUid()
         }
     }
     //右侧漂浮
@@ -94,8 +103,6 @@ jQuery(function ($) {
         })
     }
     //左侧下拉列表
-
-
     function pullDownList() {
         let $tree1 = $(".classify_tree1");
         let $tree2 = $(".classify_tree2");
@@ -113,49 +120,73 @@ jQuery(function ($) {
         })
     }
 
-    function getUid() {
-        //获取uid
-        var uid = Cookie.getCookie('uid')
-        // 判断是否登录
+    // function getUid(gid) {
+    //     //获取uid
+    //     uid = Cookie.getCookie('uid')
+    //     // 判断是否登录
+    //     console.log(uid)
+    //     if (uid) {
+    //         addGodsAjax('', godsTotalQty);
+    //         addGodsBtn(gid)
+    //     } else {
+    //         let $godsTotalQty = $('#RightContactFloatContainerCartQuantity,#menu_tab_cart');
+    //         $godsTotalQty.html(0);
+    //     }
+    // }
 
-        if (uid) {
-            addGodsAjax('', godsTotalQty);
-            addGodsBtn()
-        } else {
-            let $godsTotalQty = $('#RightContactFloatContainerCartQuantity,#menu_tab_cart');
-            $godsTotalQty.html(0);
-        }
-    }
+    // //ajax的cb 用户商品总件数
+    // function godsTotalQty(res) {
+    //     let $godsTotalQty = $('#RightContactFloatContainerCartQuantity,#menu_tab_cart');
+    //     let html = 0;
+    //     $.each(res, function (idx, item) {
+    //         html += item.qty * 1
+    //     })
+    //     $godsTotalQty.html(html);
+    //     // $godsTotalQty.click(function(){
+    //     //     location.href = ''
+    //     // })
+    // }
+    // //获取用户购物车商品信息ajax
+    // function addGodsAjax(obj, cb) {
+    //     var defaults = {
+    //         uid
+    //     }
+    //     var data = Object.assign({}, defaults, obj);
+    //     console.log(obj)
+    //     $.ajax({
+    //         type: 'GET',
+    //         dataType: 'json',
+    //         url: '../api/shoppingCart.php',
+    //         data,
+    //         success(res) {
+    //             console.log(res)
+    //             cb(res)
+    //         }
 
-    //ajax的cb 用户商品总件数
-    function godsTotalQty(res) {
-        let $godsTotalQty = $('#RightContactFloatContainerCartQuantity,#menu_tab_cart');
-        let html = 0;
-        $.each(res, function (idx, item) {
-            html += item.qty * 1
-        })
-        $godsTotalQty.html(html);
-        // $godsTotalQty.click(function(){
-        //     location.href = ''
-        // })
-    }
-    //获取用户购物车商品信息ajax
-    function addGodsAjax(obj, cb) {
-        var defaults = {
-            uid
-        }
-        var data = Object.assign({}, defaults, obj);
-        console.log(obj)
-        $.ajax({
-            type: 'GET',
-            dataType: 'json',
-            url: '../api/shoppingCart.php',
-            data,
-            success(res) {
-                console.log(res)
-                cb(res)
-            }
+    //     })
+    // }
+    //  //点击事件
+    //  function addGodsBtn(gid) {
+    //     let $details_shoppingbtn = $('.details_shoppingbtn');
+    //     let $details_purchasebtn = $('.details_purchasebtn');
+    //     //加入购物侧
+    //     $details_shoppingbtn.click(function () {
+    //         console.log(111)
+    //         addGodsAjax({
+    //             'qty': 1,
+    //             gid
+    //         }, godsTotalQty)
+    //     })
+    //     //立即购买
+    //     $details_purchasebtn.click(function () {
+    //         console.log(222)
 
-        })
-    }
+    //         addGodsAjax({
+    //             'qty': 1,
+    //             gid
+    //         }, godsTotalQty)
+    //         // location.href = ''
+    //     })
+
+    // }
 })
