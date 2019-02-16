@@ -10,7 +10,6 @@ jQuery(function ($) {
         $("#header").load("../html/header.html", function () {
             isLogin()
         });
-
     });
     // 左侧导航加载
     $(".classify_left").load("../html/leftNav.html", pullDownList);

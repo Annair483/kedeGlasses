@@ -38,23 +38,34 @@ jQuery(function ($) {
     //飞入购物车
     // 传图片路径，和飞入按钮对象
     function fly(ele) {
-        console.log(111)
         let $addcart = $(ele);
-        $addcart.on('click', function () {
-            var $flyDiv = $(`<img src="../${$(this).attr('imgSrc')}" width="32" height="32">`);
+        $addcart.on('click', function (e) {
+            // console.log($addcart)
+
+            // console.log(this)
+            var $flyDiv = $(`<img src="${$(this).attr('imgSrc')}" width="20" height="20">`);
             $flyDiv.css({
-                'position': 'absolute',
-                'left': $addcart.offset().left,
-                'top': $addcart.offset().top,
-                'z-index': '200'
+                'position': 'fixed',
+                'left':e.clientX,
+                'top':e.clientY,
+                'z-index': '200000',
+                'width': '20px',
+                'height': '20px',
+                'display':'block'
             })
-            $flyDiv.appendTo($addcart);
+
+            $flyDiv.appendTo($(this));
+            // t 574 w 1133
             var $my_cart = $('.pf_right_5');
+            console.log($my_cart.offset())
             $flyDiv.animate({
-                'left': $my_cart.offset().left,
-                'top': $my_cart.offset().top
-            }, 500, function () {
+                'left': '1359px',
+                'top': '591px'
+            }, 800, function () {
+                let gid = $(this).closest('li').attr('data-gid')
+                console.log(gid)
                 $flyDiv.remove()
+                getUid(gid,{'qty':1,gid})
             })
             return false;
         })
@@ -86,9 +97,10 @@ jQuery(function ($) {
                             </p>
                         </li>`
             $classify_product_ul.append(html);
+            // console.log($('.classify_btn>span'))
+
         })
-        console.log($('.classify_btn span'))
-        fly($('.classify_btn span'))
+        fly($('.classify_btn>span'))
 
     }
     //分页渲染
@@ -246,9 +258,9 @@ jQuery(function ($) {
 
     //点击商品传参id到详情页
     function locations(res) {
-        $classify_product_ul.on('click', 'li', function () {
-            var $gid = $(this).attr('data-gid');
-            var $formName = $(this).attr('data-fromName')
+        $classify_product_ul.on('click', 'li .imgGods,li .classify_name', function () {
+            var $gid = $(this).closest('li').attr('data-gid');
+            var $formName = $(this).closest('li').attr('data-fromName')
             location.href = `goodsDetails.html?gid=${$gid}&fromName=${$formName}`;
             return false;
         })
