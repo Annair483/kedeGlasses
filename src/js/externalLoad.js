@@ -1,5 +1,5 @@
 jQuery(function ($) {
-    var uid;
+    // var uid;
     // 底部加载
     $("#footer").load("../html/footer.html");
     //右侧漂浮加载

@@ -271,7 +271,6 @@ function setUid(res) {
 function getUid(gid,obj) {
     uid = Cookie.getCookie('uid')
     // 判断是否登录
-    // console.log(uid)
     if (uid) {
         addGodsAjax(obj, godsTotalQty);
         addGodsBtn(gid)
@@ -287,7 +286,6 @@ function addGodsAjax(obj, cb) {
         uid
     }
     var data = Object.assign({}, defaults, obj);
-    console.log(obj)
     $.ajax({
         type: 'GET',
         dataType: 'json',
@@ -307,9 +305,10 @@ function godsTotalQty(res) {
         html += item.qty * 1
     })
     $godsTotalQty.html(html);
-    // $godsTotalQty.click(function(){
-    //     location.href = ''
-    // })
+    $godsTotalQty.closest('a').click(function(){
+
+        location.href = '../html/car.html'
+    })
 }
 //点击事件
 function addGodsBtn(gid) {
@@ -317,7 +316,6 @@ function addGodsBtn(gid) {
     let $details_purchasebtn = $('.details_purchasebtn');
     //加入购物侧
     $details_shoppingbtn.click(function () {
-        console.log(111)
         addGodsAjax({
             'qty': 1,
             gid
@@ -325,32 +323,31 @@ function addGodsBtn(gid) {
     })
     //立即购买
     $details_purchasebtn.click(function () {
-        console.log(222)
-
         addGodsAjax({
             'qty': 1,
             gid
         }, godsTotalQty)
-        // location.href = ''
+        location.href = '..//html/car.html'
     })
 }
  //进入页面前先判断是否为登录状态
  function isLogin() {
+
     let autoLogin = localStorage['autoLogin'];
     if (autoLogin == 'yes') {
         let token = localStorage['token'];
         // 显示登录信息
-        getUserMessage(token);
+        getUserMessage(token,autoLogin);
         // 渲染总商品数
         getUid()
     } else if (autoLogin == 'no') {
         let token = sessionStorage['token'];
-        getUserMessage(token);
+        getUserMessage(token,autoLogin);
         getUid()
     }
 }
 //获取用户信息
-function getUserMessage(token) {
+function getUserMessage(token,autoLogin) {
     $.ajax({
         type: 'GET',
         dataType: 'json',
@@ -360,14 +357,14 @@ function getUserMessage(token) {
         },
         success(res) {
             if (!res.code) {
-                loginMessage(res)
+                loginMessage(res,autoLogin)
                 // setUid(res.content)
             }
         }
     })
 }
 //信息请求成功
-function loginMessage(res) {
+function loginMessage(res,autoLogin) {
     let $userMessage = $('#userTooleBarMemberStatus div');
     let $exit = $(".exit");
     $userMessage.eq(0).hide().siblings().show().find('span').html(res.content.uname)

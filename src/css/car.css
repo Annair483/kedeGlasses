@@ -187,7 +187,7 @@
 
 .cart_product_ul .check {
   margin-left: 20px;
-  margin-top: 37px;
+  margin-top: 20px;
 }
 
 .cart_product_ul .product {
@@ -320,7 +320,6 @@
 .cart_aggregate {
   width: 990px;
   color: #666;
-  margin-top: 40px;
   text-align: right;
   font-size: 14px;
   line-height: 24px;

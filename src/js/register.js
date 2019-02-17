@@ -6,6 +6,7 @@ jQuery(function ($) {
     let $regValidate2 = $('#regValidate2');
     let $agreeme = $('#agreeme');
     var verifyCode = new GVerify("v_container");
+    let $right_top_input = $('.right_top input');
 
     //RUserName失去焦点事件
     $RUserName.on('blur', function () {
@@ -33,11 +34,11 @@ jQuery(function ($) {
         $agreeme.toggleClass('position13')
     })
     //点击注册
-    let $right_top_input = $('.right_top input');
-    console.log($right_top_input[0])
     let $registerSlide = $('.registerSlide');
     $registerSlide.on('click', function () {
+        console.log(!checkNum())
         if (!checkNum()) {
+            console.log(111)
             return false
         } else if (!checkUpw()) {
             return false
@@ -49,23 +50,25 @@ jQuery(function ($) {
             return false
         } else {
             //存用户名和密码到数据库
-            var _uname = $RUserName.val().trim();
-            let _upw = $RPassword.val().trim();
-            $.ajax({
-                type: 'POST',
-                url: '../api/registers.php',
-                dataType: 'jsonp',
-                data: {
-                    'uname': _uname,
-                    'upw': _upw
-                },
-                success(res) {
-                    if (res === '1') {
-                        location.href = '../html/sign.html'
-                    }
-                }
-            })
+            // var _uname = $RUserName.val().trim();
+            // let _upw = $RPassword.val().trim();
+            // $.ajax({
+            //     type: 'POST',
+            //     url: '../api/registers.php',
+            //     dataType: 'jsonp',
+            //     data: {
+            //         'uname': _uname,
+            //         'upw': _upw
+            //     },
+            //     success(res) {
+            //         console.log(res)
+            //         if (res === '1') {
+            //             location.href = '../html/sign.html'
+            //         }
+            //     }
+            // })
         }
+        console.log(222)
     })
 
     //判断num是否存在或正确
@@ -73,15 +76,17 @@ jQuery(function ($) {
         var phone = $RUserName.val().trim();
         if (!/^1[3-9]\d{9}$/.test(phone)) {
             $ECT.html('请输入正确的手机号');
+            console.log('错误号码 返回false')
             return false;
         } else {
             require_user(phone).then(function (res) {
+                // console.log(res)
                 if (res === "0") {
                     $ECT.html('该号码已注册');
                     return false;
                 }
+                return true
             });
-            return true
         }
     }
 
@@ -135,8 +140,6 @@ jQuery(function ($) {
 
         } else {
             $ECT.html('验证码错误');
-            console.log($ECT.html())
-
             return false;
         }
     }
