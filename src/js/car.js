@@ -114,8 +114,6 @@ jQuery(function ($) {
 
         //找数量
         var num = ele.parent().find('input').val() * 1;
-        //		console.log(price,num);
-
         //小计=单价*数量
         var total = (price * num).toFixed(2);
         ele.parent().siblings('.subtotal').find('div').html('￥&nbsp;' + total); //设置值
@@ -129,10 +127,8 @@ jQuery(function ($) {
             //所有商品被选中了，控制权限勾上
             $allCheckBtn.prop('checked', 'checked');
         } else {
-            $allCheckBtn.prop('checked',false);
+            $allCheckBtn.prop('checked', false);
         }
-        //		console.log(arr);
-
         var priceAll = 0; //总价
         var numAll = 0; //总数量
         $.each($product_item.find(':checked'), function (idx, item) {
@@ -150,7 +146,7 @@ jQuery(function ($) {
         $totalQty.html(numAll);
         $totalPic.html((priceAll).toFixed(2));
         $total.html(($totalPic.html() - _chuxiao - _quan).toFixed(2));
-        if($total.html()<=0){
+        if ($total.html() <= 0) {
             $total.html('0.00')
         }
     }

@@ -7,7 +7,7 @@ jQuery(function ($) {
     let $agreeme = $('#agreeme');
     var verifyCode = new GVerify("v_container");
     let $right_top_input = $('.right_top input');
-
+    let numShow = true;
     //RUserName失去焦点事件
     $RUserName.on('blur', function () {
         if (checkNum()) {
@@ -36,11 +36,11 @@ jQuery(function ($) {
     //点击注册
     let $registerSlide = $('.registerSlide');
     $registerSlide.on('click', function () {
-        console.log(!checkNum())
-        if (!checkNum()) {
-            console.log(111)
+        checkNum()
+        if (!numShow) {
             return false
-        } else if (!checkUpw()) {
+        } else
+        if (!checkUpw()) {
             return false
         } else if (!checkUpwSame()) {
             return false
@@ -49,24 +49,24 @@ jQuery(function ($) {
         } else if (!checkAgree()) {
             return false
         } else {
-            //存用户名和密码到数据库
-            // var _uname = $RUserName.val().trim();
-            // let _upw = $RPassword.val().trim();
-            // $.ajax({
-            //     type: 'POST',
-            //     url: '../api/registers.php',
-            //     dataType: 'jsonp',
-            //     data: {
-            //         'uname': _uname,
-            //         'upw': _upw
-            //     },
-            //     success(res) {
-            //         console.log(res)
-            //         if (res === '1') {
-            //             location.href = '../html/sign.html'
-            //         }
-            //     }
-            // })
+            // 存用户名和密码到数据库
+            var _uname = $RUserName.val().trim();
+            let _upw = $RPassword.val().trim();
+            $.ajax({
+                type: 'POST',
+                url: '../api/registers.php',
+                // dataType: 'json',
+                data: {
+                    'uname': _uname,
+                    'upw': _upw
+                },
+                success(res) {
+                    console.log(res)
+                    if (res === '1') {
+                        location.href = '../html/sign.html'
+                    }
+                }
+            })
         }
         console.log(222)
     })
@@ -80,12 +80,14 @@ jQuery(function ($) {
             return false;
         } else {
             require_user(phone).then(function (res) {
-                // console.log(res)
+                console.log(res)
                 if (res === "0") {
                     $ECT.html('该号码已注册');
-                    return false;
+                    numShow= false;
+                }else{
+                    numShow= true;
                 }
-                return true
+
             });
         }
     }
