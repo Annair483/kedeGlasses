@@ -80,6 +80,7 @@
   height: 30px;
 }
 
+.cart_explain .allCheck,
 .cart_explain .e_product,
 .cart_explain .e_luminosity,
 .cart_explain .e_quantity,
@@ -93,8 +94,13 @@
   font-size: 14px;
 }
 
+.cart_explain .allCheck {
+  margin-left: 20px;
+  margin-top: 1px;
+}
+
 .cart_explain .e_product {
-  width: 420px;
+  width: 400px;
   margin-left: 20px;
 }
 
@@ -168,6 +174,7 @@
   zoom: 1;
 }
 
+.cart_product_ul .check,
 .cart_product_ul .product,
 .cart_product_ul .luminosity,
 .cart_product_ul .quantity,
@@ -178,8 +185,13 @@
   padding: 10px 0;
 }
 
+.cart_product_ul .check {
+  margin-left: 20px;
+  margin-top: 37px;
+}
+
 .cart_product_ul .product {
-  width: 420px;
+  width: 416px;
   margin-left: 20px;
 }
 
@@ -285,4 +297,92 @@
   line-height: 20px;
   height: 20px;
   cursor: pointer;
+}
+
+.cart_continue {
+  width: 90px;
+  height: 40px;
+  color: #333;
+  font-size: 14px;
+  line-height: 40px;
+  padding: 0 21px;
+  cursor: pointer;
+}
+
+.cart_continue i {
+  width: 10px;
+  height: 10px;
+  background-position: -15px -729px;
+  float: left;
+  margin: 16px 10px 0 0;
+}
+
+.cart_aggregate {
+  width: 990px;
+  color: #666;
+  margin-top: 40px;
+  text-align: right;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.cart_aggregate div {
+  float: right;
+}
+
+.cart_aggregate b {
+  color: #f60;
+  font-weight: 100;
+}
+
+.hj_jg,
+.lq_jg,
+.yh_jg {
+  width: 120px;
+}
+
+.hj_name,
+.yh_name,
+.lq_name {
+  width: 90px;
+}
+
+.aggregate {
+  width: 990px;
+  border-top: 1px solid #ccc;
+  padding: 15px 0 8px 0;
+  margin-top: 15px;
+  line-height: 40px;
+}
+
+.aggregate .aggregate_btn {
+  width: 190px;
+  height: 34px;
+  line-height: 34px;
+  background-color: #f60;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.aggregate .aggregate_btn b {
+  font-weight: 100;
+  font-family: 宋体;
+  color: white;
+}
+
+.aggregate_zj .a_zj,
+.aggregate_zj .a_jf {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 34px;
+  margin-right: 20px;
+}
+
+.aggregate_zj b label {
+  font-size: 14px;
 }
