@@ -1,0 +1,1 @@
+"use strict";jQuery(function(t){t("#footer").load("../html/footer.html"),t("#pf_right").load("../html/pf_right.html",function(){aaa(),t("#header").load("../html/header.html",function(){isLogin()})}),t(".classify_left").load("../html/leftNav.html",pullDownList)});
