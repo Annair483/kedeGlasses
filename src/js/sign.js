@@ -83,7 +83,7 @@
                  sessionStorage['token'] = res.token;
                  localStorage['autoLogin'] = "no";
              }
-             setUid(res) 
+             setUid(res)  
          } else {
              $r_error.eq(0).html('账户或密码错误')
          }

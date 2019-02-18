@@ -10,7 +10,10 @@ jQuery(function ($) {
     let numShow = true;
     //RUserName失去焦点事件
     $RUserName.on('blur', function () {
-        if (checkNum()) {
+        checkNum()
+        if (numShow) {
+        console.log(111)
+
             $ECT.html('')
             return false
         }
@@ -85,6 +88,7 @@ jQuery(function ($) {
                     $ECT.html('该号码已注册');
                     numShow= false;
                 }else{
+                    // $ECT.html('');
                     numShow= true;
                 }
 

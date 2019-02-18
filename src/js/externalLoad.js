@@ -7,6 +7,7 @@ jQuery(function ($) {
         aaa();
         //头部加载
         $("#header").load("../html/header.html", function () {
+            
             isLogin()
         });
     });

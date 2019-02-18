@@ -327,7 +327,7 @@ function addGodsBtn(gid) {
             'qty': 1,
             gid
         }, godsTotalQty)
-        location.href = '..//html/car.html'
+        location.href = '../html/car.html'
     })
 }
  //进入页面前先判断是否为登录状态
