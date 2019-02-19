@@ -8,12 +8,12 @@
      let $r_error = $(".r_error");
      let $remeberAgree = $(".r_remeber s");
      //进入页面判断是否记住账号
-     let remember_account = localStorage['remember_account']||'';
-     if(remember_account=='yes'){
+     let remember_account = localStorage['remember_account'] || '';
+     if (remember_account == 'yes') {
          $remeberAgree.eq(0).addClass('position13');
          $UserName.val(localStorage['uname']);
      }
-  
+
      //登录窗口选项切换
      $title.eq(0).addClass('active');
      $loginWindow.eq(0).show();
@@ -58,6 +58,7 @@
                      'upw': _Password
                  },
                  success(res) {
+                     console.log(res)
                      successfulRequest(res, _UserName, _Password)
                  }
              })
@@ -66,7 +67,7 @@
      })
      //登录成功执行事件
      function successfulRequest(res, _UserName, _Password) {
-         if (res) {
+         if (res.code) {
              //判断是否记住账号
              if ($remeberAgree.eq(0).hasClass('position13')) {
                  localStorage['uname'] = _UserName;
@@ -83,11 +84,11 @@
                  sessionStorage['token'] = res.token;
                  localStorage['autoLogin'] = "no";
              }
-             setUid(res)  
+             setUid(res)
+             location.href = '../index.html'
          } else {
              $r_error.eq(0).html('账户或密码错误')
          }
-         location.href = '../index.html'
      }
 
  })

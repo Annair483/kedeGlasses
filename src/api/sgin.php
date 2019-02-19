@@ -16,7 +16,10 @@
         $res->close();
         $conn->close();
    }else{
-       echo "0";
+    $data = array(
+        'code'=>0
+    );
+        echo json_encode($data,JSON_UNESCAPED_UNICODE);
         $res->close();
         $conn->close();
    };
